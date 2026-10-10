@@ -1,0 +1,660 @@
+{
+  "email_env_file": "/data/mail.env",
+  "include_case_sensitive": [
+    "IT",
+    "I.T.",
+    "GIS",
+    "ERP",
+    "SCADA"
+  ],
+  "include": [
+    "information technology",
+    "information systems",
+    "information security",
+    "cyber",
+    "cybersecurity",
+    "systems analyst",
+    "systems administrator",
+    "system administrator",
+    "systems engineer",
+    "network administrator",
+    "network analyst",
+    "network engineer",
+    "network technician",
+    "help desk",
+    "helpdesk",
+    "service desk",
+    "desktop support",
+    "technical support",
+    "tech support",
+    "hardware technical",
+    "it support",
+    "software",
+    "developer",
+    "programmer",
+    "devops",
+    "database",
+    "data analyst",
+    "data engineer",
+    "data scientist",
+    "business intelligence",
+    "business systems",
+    "application analyst",
+    "applications analyst",
+    "application support",
+    "applications support",
+    "sharepoint",
+    "cloud",
+    "infrastructure analyst",
+    "telecommunications",
+    "digital",
+    "web developer",
+    "ux",
+    "technology",
+    "enterprise architect",
+    "solutions architect",
+    "technical analyst",
+    "business support analyst",
+    "informatics",
+    "system analyst",
+    "network security",
+    "end user support",
+    "end-user support",
+    "data and ai",
+    "data & ai",
+    "field support",
+    "deskside",
+    "desktop technician",
+    "it technician",
+    "computer technician",
+    "technology support"
+  ],
+  "exclude_locations": [
+    "sudbury",
+    "north bay",
+    "sault ste",
+    "thunder bay",
+    "ottawa",
+    "hamilton",
+    "london, on",
+    "kingston",
+    "windsor",
+    "brampton",
+    "oshawa",
+    "peterborough"
+  ],
+  "exclude": [
+    "volunteer",
+    "crossing guard"
+  ],
+  "boost": [
+    "cupe",
+    "opseu",
+    "collective agreement",
+    "analyst",
+    "administrator",
+    "specialist",
+    "technician"
+  ],
+  "sources": [
+    {
+      "name": "York Region",
+      "type": "hrsmart",
+      "args": [
+        "https://york.hua.hrsmart.com"
+      ],
+      "place": "Newmarket",
+      "group": "York Region",
+      "label": "Regional Municipality of York",
+      "sector": "municipal"
+    },
+    {
+      "name": "Town of Newmarket",
+      "type": "hrsmart",
+      "args": [
+        "https://newmarket.hua.hrsmart.com"
+      ],
+      "place": "Newmarket",
+      "group": "York Region",
+      "label": "Town of Newmarket",
+      "sector": "municipal"
+    },
+    {
+      "name": "Southlake Hospital",
+      "type": "workday",
+      "args": [
+        "southlake.wd10.myworkdayjobs.com",
+        "southlake",
+        "Southlake"
+      ],
+      "place": "Newmarket",
+      "group": "York Region",
+      "label": "Southlake Regional Health Centre",
+      "sector": "healthcare"
+    },
+    {
+      "name": "Town of Aurora",
+      "type": "adp",
+      "args": [
+        "b1fead40-7a8c-4b14-87a0-dc031bab192d"
+      ],
+      "place": "Aurora",
+      "group": "York Region",
+      "label": "Town of Aurora",
+      "sector": "municipal"
+    },
+    {
+      "name": "Town of East Gwillimbury",
+      "type": "adp",
+      "args": [
+        "f5060f66-1f92-430e-b67b-c5e16cd9318f"
+      ],
+      "place": "East Gwillimbury",
+      "group": "York Region",
+      "label": "Town of East Gwillimbury",
+      "sector": "municipal"
+    },
+    {
+      "name": "York Regional Police (civilian)",
+      "type": "sf_category",
+      "args": [
+        "https://jobs.yrp.ca/go/Civilian-Career-Opportunities/8666447"
+      ],
+      "place": "Aurora",
+      "allow_empty": true,
+      "group": "York Region",
+      "label": "York Regional Police (civilian)",
+      "sector": "police_civilian"
+    },
+    {
+      "name": "York Regional Police (uniform)",
+      "type": "sf_category",
+      "args": [
+        "https://jobs.yrp.ca/go/Uniform-Career-Opportunities/8666547"
+      ],
+      "place": "Aurora",
+      "allow_empty": true,
+      "group": "York Region",
+      "label": "York Regional Police (uniform)",
+      "sector": "police_uniform"
+    },
+    {
+      "name": "City of Markham",
+      "type": "adp",
+      "args": [
+        "04bf51f8-d2dd-4641-ba92-183522f6e8b3"
+      ],
+      "place": "Markham",
+      "group": "York Region",
+      "label": "City of Markham",
+      "sector": "municipal"
+    },
+    {
+      "name": "City of Richmond Hill",
+      "type": "successfactors",
+      "args": [
+        "https://jobs.richmondhill.ca"
+      ],
+      "place": "Richmond Hill",
+      "group": "York Region",
+      "label": "City of Richmond Hill",
+      "sector": "municipal"
+    },
+    {
+      "name": "Township of King",
+      "type": "comeet",
+      "args": [
+        "https://www.comeet.com/jobs/kingtownship/3B.004"
+      ],
+      "place": "King",
+      "group": "York Region",
+      "label": "Township of King",
+      "sector": "municipal"
+    },
+    {
+      "name": "Mackenzie Health",
+      "type": "icims",
+      "args": [
+        "https://employment-mackenziehealth.icims.com"
+      ],
+      "place": "Richmond Hill",
+      "group": "York Region",
+      "label": "Mackenzie Health",
+      "sector": "healthcare"
+    },
+    {
+      "name": "Town of Innisfil",
+      "type": "hrsmart",
+      "args": [
+        "https://innisfil.hua.hrsmart.com"
+      ],
+      "place": "Innisfil",
+      "group": "Barrie & Simcoe",
+      "label": "Town of Innisfil",
+      "sector": "municipal"
+    },
+    {
+      "name": "Seneca Polytechnic",
+      "type": "taleo",
+      "args": [
+        "https://tre.tbe.taleo.net/tre01/ats/careers/v2",
+        "SENECOLL4",
+        "4"
+      ],
+      "place": "King",
+      "group": "Toronto",
+      "label": "Seneca Polytechnic",
+      "sector": "education"
+    },
+    {
+      "name": "Children's Aid Society of York Region",
+      "type": "adp",
+      "args": [
+        "cde5c983-fb41-4db1-904a-85f406d7a6a3"
+      ],
+      "place": "Newmarket",
+      "allow_empty": true,
+      "group": "York Region",
+      "label": "Children's Aid Society of York Region",
+      "sector": "social"
+    },
+    {
+      "name": "Family Services York Region",
+      "type": "adp",
+      "args": [
+        "3852841b-030c-4e02-a3f7-f78b3f18fb80"
+      ],
+      "place": "Newmarket",
+      "allow_empty": true,
+      "group": "York Region",
+      "label": "Family Services York Region",
+      "sector": "social"
+    },
+    {
+      "name": "City of Toronto",
+      "type": "successfactors",
+      "args": [
+        "https://jobs.toronto.ca/jobsatcity"
+      ],
+      "group": "Toronto",
+      "label": "City of Toronto",
+      "sector": "municipal",
+      "place": "Toronto"
+    },
+    {
+      "name": "Toronto Hydro",
+      "type": "successfactors",
+      "args": [
+        "https://jobs.torontohydro.com"
+      ],
+      "group": "Toronto",
+      "label": "Toronto Hydro",
+      "sector": "utility",
+      "place": "Toronto"
+    },
+    {
+      "name": "University of Toronto",
+      "type": "successfactors",
+      "args": [
+        "https://jobs.utoronto.ca"
+      ],
+      "group": "Toronto",
+      "label": "University of Toronto",
+      "sector": "education",
+      "place": "Toronto"
+    },
+    {
+      "name": "Metrolinx",
+      "type": "oracle_hcm",
+      "args": [
+        "https://ehtc.fa.ca2.oraclecloud.com",
+        "CX_1"
+      ],
+      "group": "Toronto",
+      "label": "Metrolinx (GO Transit, UP Express)",
+      "sector": "transit",
+      "place": "Toronto"
+    },
+    {
+      "name": "City of Mississauga",
+      "type": "successfactors",
+      "args": [
+        "https://jobs.mississauga.ca"
+      ],
+      "group": "Mississauga",
+      "label": "City of Mississauga",
+      "sector": "municipal",
+      "place": "Mississauga"
+    },
+    {
+      "name": "Region of Peel",
+      "type": "icims",
+      "args": [
+        "https://careers-peelregion.icims.com"
+      ],
+      "group": "Mississauga",
+      "label": "Region of Peel",
+      "sector": "municipal",
+      "place": "Mississauga"
+    },
+    {
+      "name": "Royal Victoria Regional Health Centre",
+      "type": "hrsmart",
+      "args": [
+        "https://rvh.hua.hrsmart.com"
+      ],
+      "group": "Barrie & Simcoe",
+      "label": "Royal Victoria Regional Health Centre (Barrie)",
+      "sector": "healthcare",
+      "place": "Barrie"
+    },
+    {
+      "name": "Georgian College",
+      "type": "taleo_tee",
+      "args": [
+        "aa165.taleo.net",
+        "gc_external_career_site",
+        "8216760849"
+      ],
+      "group": "Barrie & Simcoe",
+      "label": "Georgian College (Barrie)",
+      "sector": "education",
+      "place": "Barrie"
+    },
+    {
+      "name": "Toronto District School Board",
+      "type": "talentlink",
+      "args": [
+        "ca01-foc.sabatalentlink.com",
+        "PLUFK026203F3VBQBQW6GQWWN",
+        "https://www.tdsb.on.ca/jobpostings/details.html"
+      ],
+      "group": "Toronto",
+      "label": "Toronto District School Board",
+      "sector": "school_board",
+      "place": "Toronto"
+    }
+  ],
+  "site_dir": "/data/site",
+  "manual_links": [
+    {
+      "name": "Ontario Public Service (gojobs)",
+      "url": "https://www.gojobs.gov.on.ca/",
+      "why": "Provincial jobs. Blocks automated checks. Filter to York Region.",
+      "sector": "federal"
+    },
+    {
+      "name": "City of Vaughan",
+      "url": "https://www.vaughan.ca/about-city-vaughan/employment-opportunities",
+      "why": "Blocks automated checks.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Bradford West Gwillimbury",
+      "url": "https://www.townofbwg.com/town-hall/careers/",
+      "why": "Blocks automated checks.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Town of Georgina",
+      "url": "https://georgina-careers.vipcloud.ca/default",
+      "why": "Needs a browser to display jobs.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Town of Whitchurch-Stouffville",
+      "url": "https://townofws-careers.vipcloud.ca/default",
+      "why": "Needs a browser to display jobs.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Alectra Utilities",
+      "url": "https://jobs.dayforcehcm.com/en-US/alectra/CANDIDATEPORTAL",
+      "why": "Vaughan-based hydro utility. Its job system blocks automated checks.",
+      "sector": "utility"
+    },
+    {
+      "name": "Newmarket-Tay Power (NT Power)",
+      "url": "https://www.ntpower.ca/about-us/careers",
+      "why": "Posts through the shared MEARIE board, which can't be filtered to one utility.",
+      "sector": "utility"
+    },
+    {
+      "name": "GC Jobs (federal government)",
+      "url": "https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440?toggleLanguage=en",
+      "why": "Federal public service. Search IT, location Ontario > York Region.",
+      "sector": "federal"
+    },
+    {
+      "name": "Royal Canadian Mounted Police",
+      "url": "https://rcmp.ca/en/careers-rcmp/apply-now",
+      "why": "Police recruitment is a standing application; civilian jobs are posted on GC Jobs.",
+      "sector": "police"
+    },
+    {
+      "name": "Canadian Armed Forces",
+      "url": "https://forces.ca/en/",
+      "why": "Lists occupations to apply for, not individual postings.",
+      "tag": "forces",
+      "sector": "federal"
+    },
+    {
+      "name": "Lake Simcoe Region Conservation Authority",
+      "url": "https://lsrca.on.ca/index.php/about-us/careers/",
+      "why": "Newmarket-based. Lists openings as plain text, so it can't be watched automatically.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Township of Uxbridge",
+      "url": "https://www.uxbridge.ca/town-hall/careers",
+      "why": "Careers page with no job feed to read.",
+      "sector": "municipal"
+    },
+    {
+      "name": "City of Barrie",
+      "url": "https://www.barrie.ca/government-news/careers-employment",
+      "why": "Uses a custom job system with no feed to read.",
+      "sector": "municipal"
+    },
+    {
+      "name": "Trillium Health Partners (Mississauga)",
+      "url": "https://www.thp.ca/careers/Pages/Apply.aspx",
+      "why": "Their job portal refuses automated checks.",
+      "sector": "healthcare",
+      "it": false
+    },
+    {
+      "name": "Toronto Transit Commission",
+      "url": "https://pw.ttc.ca/Jobs",
+      "why": "Custom site with no job feed.",
+      "sector": "transit"
+    },
+    {
+      "name": "University Health Network (Toronto)",
+      "url": "https://www.uhn.ca/corporate/Careers",
+      "why": "No readable job feed.",
+      "sector": "healthcare",
+      "it": false
+    },
+    {
+      "name": "The Hospital for Sick Children",
+      "url": "https://www.sickkids.ca/en/careers/",
+      "why": "Old PeopleSoft portal that can't be read automatically.",
+      "sector": "healthcare",
+      "it": false
+    },
+    {
+      "name": "Sheridan College",
+      "url": "https://www.sheridancollege.ca/careers",
+      "why": "Uses Njoyn, which blocks automated checks.",
+      "sector": "education"
+    }
+  ],
+  "desc_min": 3,
+  "desc_terms": [
+    "active directory",
+    "help desk",
+    "service desk",
+    "desktop support",
+    "troubleshoot",
+    "troubleshooting",
+    "servers",
+    "network infrastructure",
+    "sql",
+    "python",
+    "powershell",
+    "cybersecurity",
+    "microsoft 365",
+    "office 365",
+    "azure",
+    "aws",
+    "vmware",
+    "virtualization",
+    "itil",
+    "tcp/ip",
+    "firewall",
+    "software development",
+    "programming",
+    "database",
+    "it infrastructure",
+    "systems administration",
+    "incident management",
+    "change management",
+    "end user support",
+    "endpoint",
+    "sharepoint",
+    "power bi",
+    "api",
+    "devops",
+    "gis",
+    "arcgis",
+    "erp",
+    "scada",
+    "cloud"
+  ],
+  "track_file": "/data/track.json",
+  "data_dir": "/data",
+  "public_url": "",
+  "digest_user": "admin",
+  "group_order": [
+    "York Region",
+    "Toronto",
+    "Mississauga",
+    "Barrie & Simcoe"
+  ],
+  "politeness": {
+    "min_gap": 1.5,
+    "robots": true,
+    "max_tries": 3,
+    "robots_exceptions": [],
+    "detail_pages_per_site": 12,
+    "detail_cooldown_seconds": 480
+  },
+  "schedule": {
+    "hours": [
+      2,
+      6,
+      10,
+      14,
+      18,
+      22
+    ],
+    "minute": 15,
+    "jitter_minutes": 10
+  },
+  "it_core": [
+    "information technology",
+    "information systems",
+    "information security",
+    "cyber",
+    "cybersecurity",
+    "systems analyst",
+    "systems administrator",
+    "system administrator",
+    "systems engineer",
+    "network administrator",
+    "network analyst",
+    "network engineer",
+    "network technician",
+    "help desk",
+    "helpdesk",
+    "service desk",
+    "desktop support",
+    "technical support",
+    "tech support",
+    "hardware technical",
+    "it support",
+    "software",
+    "developer",
+    "programmer",
+    "devops",
+    "database",
+    "sharepoint",
+    "cloud",
+    "infrastructure analyst",
+    "telecommunications",
+    "web developer",
+    "application support",
+    "applications support",
+    "application analyst",
+    "applications analyst",
+    "enterprise architect",
+    "solutions architect",
+    "technical analyst",
+    "it",
+    "system analyst",
+    "network security",
+    "end user support",
+    "end-user support",
+    "data and ai",
+    "data & ai",
+    "field support",
+    "deskside",
+    "desktop technician",
+    "it technician",
+    "computer technician",
+    "technology support"
+  ],
+  "it_core_case_sensitive": [
+    "IT",
+    "I.T."
+  ],
+  "it_domain": [
+    "financ",
+    "account",
+    "payroll",
+    "budget",
+    "revenue",
+    "tax",
+    "audit",
+    "procure",
+    "purchas",
+    "safety",
+    "human resources",
+    "hr",
+    "risk",
+    "insur",
+    "legal",
+    "marketing",
+    "claims",
+    "property",
+    "grant",
+    "fundrais",
+    "clinical",
+    "nurs",
+    "electric",
+    "building automation",
+    "hvac"
+  ],
+  "it_strong": [
+    "it security",
+    "information security",
+    "cybersecurity",
+    "cyber security",
+    "network security",
+    "help desk",
+    "helpdesk",
+    "service desk",
+    "desktop support"
+  ]
+}

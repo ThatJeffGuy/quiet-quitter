@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Quiet Quitter · Because a Timmy's giftcard doesn't pay the rent..</title>
+<script>try{var t=localStorage.getItem("qq_theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#ec4899"><meta name="application-name" content="The Quiet Quitter"><meta name="apple-mobile-web-app-title" content="Quiet Quitter"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="/manifest.webmanifest"><meta name="color-scheme" content="light dark"><meta name="description" content="Because a Timmy's giftcard doesn't pay the rent..">
+<style>
+  :root { color-scheme:light; --bg:#f4f5f8; --card:#fff; --card2:#f8f9fb; --text:#1b1f24; --muted:#5d6675; --line:#e2e5eb; --accent:#2563eb; --on-accent:#fff;
+          --new:#15803d; --it:#7c3aed; --warn:#b45309; --bad:#dc2626; --shadow:0 1px 2px rgba(16,24,40,.06); --mark:#ec4899; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme=light]) { color-scheme:dark; --bg:#0f1318; --card:#171c23; --card2:#1b212a; --text:#e6e9ee; --muted:#9aa4b4; --line:#272e39; --accent:#6ea0ff; --on-accent:#0b1220;
+          --new:#4ade80; --it:#b794f6; --warn:#f59e0b; --bad:#f87171; --shadow:0 1px 2px rgba(0,0,0,.35); --mark:#f472b6; }
+  }
+  :root[data-theme=dark] { color-scheme:dark; --bg:#0f1318; --card:#171c23; --card2:#1b212a; --text:#e6e9ee; --muted:#9aa4b4; --line:#272e39; --accent:#6ea0ff; --on-accent:#0b1220;
+          --new:#4ade80; --it:#b794f6; --warn:#f59e0b; --bad:#f87171; --shadow:0 1px 2px rgba(0,0,0,.35); --mark:#f472b6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui,sans-serif; }
+  main { max-width:980px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:22px; margin:0 0 2px; display:flex; align-items:center; gap:10px; }
+  .top h1, .top h1 * { -webkit-user-select:none; user-select:none; -webkit-tap-highlight-color:transparent; }
+  .top .mark{cursor:pointer;user-select:none;position:relative;z-index:2;transform-origin:center;transition:transform .18s ease-out}
+  .top .mark:hover{transform:scale(1.2)}
+  .top .mark:active{transform:scale(1.1)}
+  @media (prefers-reduced-motion:reduce){.top .mark{transition:none}}
+  .mark{display:inline-block;width:1.5em;height:1.5em;background:var(--mark);-webkit-mask:url(/donut-mark.png) center/contain no-repeat;mask:url(/donut-mark.png) center/contain no-repeat;flex:none}
+  h2 { font-size:16px; margin:32px 0 4px; }
+  .sub { color:var(--muted); font-size:13px; margin-bottom:6px; }
+  footer.foot { margin:36px 0 0; padding-top:14px; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:13px; line-height:1.7; }
+  footer.foot a { color:var(--accent); text-decoration:none; } footer.foot a:hover { text-decoration:underline; } footer.foot b { color:var(--text); }
+  .pipeline { font-size:13px; color:var(--muted); margin-bottom:14px; display:flex; flex-wrap:wrap; gap:6px 14px; }
+  .pipeline b { color:var(--text); }
+  .pipeline a.plink { color:var(--muted); text-decoration:none; } .pipeline a.plink:hover { color:var(--accent); }
+  input, select, button, textarea { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--text); }
+  input[type=search] { flex:1 1 220px; }
+  label.chk { display:flex; align-items:center; gap:6px; color:var(--muted); }
+  .alertchip { gap:4px; font-size:13px; } .alertchip button { cursor:pointer; font-size:12px; padding:2px 8px; line-height:1.4; }
+  .pager { display:flex; flex-direction:column; align-items:center; gap:8px; margin:18px 0 6px; }
+  .pg-btns { display:inline-flex; align-items:stretch; border:1px solid var(--line); border-radius:99px; overflow:hidden; background:var(--card); box-shadow:var(--shadow); }
+  .pg-btns button, .pg-btns .gap { border:0; border-radius:0; background:transparent; min-width:42px; padding:9px 14px; font-size:14px; color:var(--text); border-right:1px solid var(--line); }
+  .pg-btns > :last-child { border-right:0; } .pg-btns .gap { color:var(--muted); display:flex; align-items:center; justify-content:center; min-width:30px; padding:9px 4px; }
+  .pg-btns button { cursor:pointer; } .pg-btns button:hover:not(:disabled):not(.on) { background:var(--card2); }
+  .pg-btns button.on { background:var(--accent); color:var(--on-accent); font-weight:700; }
+  .pg-btns button:disabled { color:var(--muted); opacity:.45; cursor:default; }
+  .pg-info { color:var(--muted); font-size:13px; }
+  .count { color:var(--muted); font-size:13px; margin:4px 0 8px; }
+  .job { background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:8px; box-shadow:var(--shadow); transition:border-color .12s; }
+  .job:hover, .job.exp { border-color:color-mix(in srgb, var(--accent) 55%, var(--line)); }
+  .job.dim .jhead { opacity:.62; }
+  .jhead { display:flex; align-items:center; gap:12px; padding:11px 14px; cursor:pointer; user-select:none; }
+  .jhead:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; border-radius:12px; }
+  .jmain { flex:1; min-width:0; }
+  .title { font-weight:600; line-height:1.3; }
+  .meta { color:var(--muted); font-size:13px; margin-top:3px; display:flex; flex-wrap:wrap; gap:2px 12px; }
+  .meta .pay { color:var(--text); }
+  .meta .soon { color:var(--bad); font-weight:600; }
+  .jside { display:flex; align-items:center; gap:10px; flex:none; }
+  .badge { font-size:11px; font-weight:700; padding:1px 7px; border-radius:99px; margin-left:8px; vertical-align:1px; border:1px solid currentColor; white-space:nowrap; }
+  .badge.new { color:var(--new); } .badge.it { color:var(--it); } .badge.union { color:var(--accent); } .badge.closed { color:var(--bad); }
+  select.st { padding:7px 10px; font-size:13px; } select.st.set { border-color:var(--new); color:var(--new); }
+  .btn.has { color:var(--accent); border-color:var(--accent); }
+  .pipeline:empty, .bars:empty { display:none; }
+  .controls select { flex:0 1 auto; max-width:200px; min-width:0; }
+  .chev { color:var(--muted); font-size:13px; transition:transform .15s; } .job.exp .chev { transform:rotate(180deg); }
+  .spill { font-size:12px; font-weight:600; padding:1px 9px; border-radius:99px; border:1px solid var(--new); color:var(--new); white-space:nowrap; }
+  .spill.off { border-color:var(--line); color:var(--muted); }
+  .jbody { border-top:1px solid var(--line); background:var(--card2); padding:12px 14px 14px; border-radius:0 0 11px 11px; }
+  .acts { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .acts > * { font-size:13px; }
+  .btn { display:inline-flex; align-items:center; gap:6px; padding:7px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--text); text-decoration:none; cursor:pointer; line-height:1.2; }
+  .btn:hover { border-color:var(--accent); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:var(--on-accent); font-weight:600; }
+  .btn.primary:hover { filter:brightness(1.08); }
+  details.share { position:relative; } details.share > summary { list-style:none; } details.share > summary::-webkit-details-marker { display:none; }
+  details.share .menu { position:absolute; z-index:5; top:calc(100% + 4px); left:0; min-width:170px; background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.18); padding:4px; display:grid; }
+  details.share .menu > * { text-align:left; border:0; background:none; padding:8px 10px; border-radius:6px; cursor:pointer; color:var(--text); text-decoration:none; font-size:13px; }
+  details.share .menu > *:hover { background:var(--card2); }
+  .work { margin-top:12px; } .work:empty { display:none; }
+  .work .hintline { color:var(--muted); font-size:13px; }
+  .work .mpanel:first-child { margin-top:0; padding-top:0; border-top:0; }
+  .job .panel { margin-top:12px; }
+  .top { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .top h1 { flex:none; }
+  .slogan { flex:1 1 0; min-width:0; text-align:center; white-space:nowrap; font-size:15px; font-style:italic; color:var(--muted); -webkit-user-select:none; user-select:none; }
+  @media (max-width:960px) { .slogan { order:3; flex-basis:100%; text-align:left; } .top .who { margin-left:auto; } }
+  @media (max-width:420px) { .slogan { white-space:normal; } }
+  .top .who { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .iconbtn { cursor:pointer; padding:5px 11px; font-size:13px; border-radius:99px; background:var(--card); color:var(--muted); }
+  .iconbtn:hover { color:var(--text); border-color:var(--accent); }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; align-items:center; }
+  .controls #q { flex:1 1 200px; min-width:160px; }
+  .fbtn { cursor:pointer; color:var(--muted); } .fbtn.on { color:var(--text); border-color:var(--accent); }
+  .fbtn b { display:inline-block; min-width:1.4em; text-align:center; margin-left:4px; font-size:12px; border-radius:99px; background:var(--accent); color:var(--on-accent); padding:0 5px; }
+  .fpanel { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-bottom:10px; }
+  .fpanel .dist { margin:0; }
+  @media (min-width:980px) { .fpanel { flex-wrap:nowrap; } .fpanel .dist { flex-wrap:nowrap; white-space:nowrap; } }
+  .fpanel .pushright { margin-left:auto; } #fclear { cursor:pointer; color:var(--muted); } #fclear:hover { color:var(--text); border-color:var(--accent); }
+  .checks label:has(input:disabled) { opacity:.5; cursor:not-allowed; }
+  .checks { display:flex; flex-wrap:wrap; gap:6px 18px; margin:0 0 8px; font-size:14px; }
+  details.sec { margin-top:26px; } details.sec > summary { cursor:pointer; font-size:16px; font-weight:600; list-style:none; display:flex; align-items:center; gap:8px; }
+  details.sec > summary::-webkit-details-marker { display:none; } details.sec > summary::before { content:"▸"; color:var(--muted); width:1em; } details.sec[open] > summary::before { content:"▾"; }
+  details.sec > .note { margin-top:6px; }
+  .panel { margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); display:flex; flex-wrap:wrap; gap:8px; align-items:flex-start; }
+  .panel textarea { flex:1 1 280px; min-height:70px; resize:vertical; }
+  .panel label { color:var(--muted); font-size:13px; display:flex; flex-direction:column; gap:3px; }
+  .panel button { cursor:pointer; background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+  .warn { background:var(--card); border:1px solid var(--warn); color:var(--warn); border-radius:8px; padding:8px 12px; margin-bottom:12px; font-size:13px; }
+  .empty { color:var(--muted); text-align:center; padding:32px 0; }
+  .note { color:var(--muted); font-size:13px; margin:0 0 10px; }
+  .links { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:8px; }
+  .links a { display:block; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; color:var(--accent); text-decoration:none; }
+  .links a:hover { border-color:var(--accent); }
+  .links small { display:block; color:var(--muted); }
+  .tabs { display:flex; gap:6px; margin:6px 0 14px; }
+  .tabs button, .dtabs button { cursor:pointer; padding:7px 14px; color:var(--muted); }
+  .tabs button.on, .dtabs button.on { color:var(--text); border-color:var(--accent); font-weight:600; }
+  .dtabs { display:flex; gap:6px; margin-bottom:8px; }
+  textarea#doc { width:100%; min-height:62vh; resize:vertical; font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; padding:14px; }
+  #dstat.bad { color:var(--bad); }
+  #dconf button { cursor:pointer; margin-left:6px; }
+  .bars { display:grid; gap:8px; margin-bottom:12px; }
+  .bar { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:9px 12px; font-size:14px; display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; }
+  .bar.due { border-left-color:var(--warn); }
+  .bar a { color:var(--accent); } .bar button { cursor:pointer; font-size:13px; padding:4px 10px; }
+  .dist { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 10px; color:var(--muted); font-size:13px; }
+  .dist input { width:92px; text-transform:uppercase; }
+  .km { color:var(--muted); }
+  button.mt { font-size:13px; padding:6px 10px; cursor:pointer; color:var(--muted); }
+  .mpanel { margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); font-size:14px; }
+  .meter { height:8px; background:var(--line); border-radius:99px; overflow:hidden; margin:6px 0 8px; max-width:320px; }
+  .meter > i { display:block; height:100%; background:var(--new); }
+  .pl { border:1px solid var(--line); border-radius:8px; padding:8px; margin:6px 0; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:6px; }
+  .pl textarea { grid-column:1/-1; min-height:70px; } .pl button { cursor:pointer; font-size:12px; }
+  .chip.pick { cursor:pointer; user-select:none; } .chip.pick.on { border-color:var(--accent); color:var(--text); background:color-mix(in srgb, var(--accent) 15%, transparent); }
+  .chips { display:flex; flex-wrap:wrap; gap:5px; margin:4px 0 8px; }
+  .chip { font-size:12px; padding:2px 8px; border-radius:99px; border:1px solid var(--line); }
+  .chip.have { border-color:var(--new); color:var(--new); } .chip.miss { color:var(--muted); }
+  fieldset { border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:0 0 14px; background:var(--card); display:grid; gap:10px; }
+  legend { font-weight:600; padding:0 6px; }
+  .pk label.field, #profbox label.field { display:grid; gap:4px; color:var(--muted); font-size:13px; margin:10px 0; }
+  .pk textarea, .pk input, #profbox textarea, #profbox input { width:100%; box-sizing:border-box; }
+  .pk textarea, #profbox textarea { resize:vertical; font-size:14px; line-height:1.5; }
+  fieldset label.field { display:grid; gap:4px; color:var(--muted); font-size:13px; }
+  fieldset label.row2 { display:flex; align-items:center; gap:8px; }
+  .emp { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:13px; }
+  .emp label { display:flex; align-items:center; gap:5px; }
+  #ssave { cursor:pointer; background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+  #sstat { margin-left:10px; font-size:13px; color:var(--muted); }
+  .console { display:flex; align-items:center; gap:8px; width:100%; margin:6px 0 18px; padding:6px 16px; min-height:34px; overflow:hidden; white-space:nowrap;
+             border:1px solid var(--accent); border-radius:99px; color:var(--accent); background:transparent;
+             font:14px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; -webkit-user-select:none; user-select:none; }
+  .console .cprompt { flex:none; font-weight:700; }
+  #ctext { flex:0 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis; }
+  .ccursor { flex:none; width:.55em; height:1.15em; background:currentColor; animation:cblink 1.05s steps(1) infinite; }
+  .ccursor.typing { animation:none; }
+  .console.hacked { border-color:#ec4899; color:#ec4899; background:rgba(236,72,153,.1); text-shadow:0 0 7px rgba(236,72,153,.6); animation:cglitch .22s steps(2,end) infinite; }
+  @keyframes cglitch { 0% { transform:translate(0,0); } 25% { transform:translate(-1px,1px); } 50% { transform:translate(1px,0); } 75% { transform:translate(0,-1px); } 100% { transform:translate(0,0); } }
+  .hackvid { max-width:560px; margin:0 auto 12px; border:2px solid #ec4899; border-radius:14px; overflow:hidden; background:#12060d; box-shadow:0 0 18px rgba(236,72,153,.45); }
+  .hv-bar { display:flex; align-items:center; gap:12px; padding:8px 12px; color:#ec4899; background:rgba(236,72,153,.12);
+            font:700 12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.08em; }
+  .hv-bar > span:nth-child(2) { flex:1; }
+  .hv-bar button { cursor:pointer; color:#ec4899; border:1px solid #ec4899; background:transparent; font:inherit; padding:3px 10px; border-radius:99px; }
+  .hv-bar button:hover { background:#ec4899; color:#12060d; }
+  .hv-wave { display:inline-flex; align-items:flex-end; gap:3px; height:16px; } .hv-wave i { width:3px; background:#ec4899; height:4px; animation:hvwave .7s ease-in-out infinite; }
+  .hv-wave i:nth-child(2) { animation-delay:.12s; } .hv-wave i:nth-child(3) { animation-delay:.24s; } .hv-wave i:nth-child(4) { animation-delay:.36s; } .hv-wave i:nth-child(5) { animation-delay:.48s; }
+  @keyframes hvwave { 0%,100% { height:4px; } 50% { height:16px; } }
+  @media (prefers-reduced-motion:reduce) { .console.hacked, .hv-wave i { animation:none; } }
+  @keyframes cblink { 0%,55% { opacity:1; } 56%,100% { opacity:0; } }
+  @media (prefers-reduced-motion:reduce) { .ccursor { animation:none; } }
+  table.utable { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:14px; }
+  .utable td { padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:middle; }
+  .utable tr:last-child td { border-bottom:0; }
+  .utable td.act { text-align:right; white-space:nowrap; }
+  .utable button { cursor:pointer; font-size:13px; padding:5px 10px; margin-left:6px; }
+  .utable button.danger { color:var(--bad); border-color:var(--bad); }
+  .badge.admin { color:var(--warn); }
+  #astat, #pstat { margin-left:10px; font-size:13px; color:var(--muted); }
+  #astat b { color:var(--text); user-select:all; }
+  .filebox { border:1px solid var(--line); background:var(--card); border-radius:10px; padding:12px 14px; margin-bottom:12px; }
+  .filebox.over { border-color:var(--accent); background:color-mix(in srgb, var(--accent) 8%, var(--card)); }
+  .filebox .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; }
+  .filebox button, .filebox select { cursor:pointer; font-size:13px; padding:6px 10px; }
+  .filebox .fname { font-weight:600; word-break:break-all; }
+  .vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); opacity:0; }
+  #fstat2 { font-size:13px; color:var(--muted); margin-top:6px; min-height:1.2em; }
+  #fstat2.bad { color:var(--bad); }
+  h3.sec { font-size:13px; font-weight:600; color:var(--muted); margin:14px 0 6px; text-transform:uppercase; letter-spacing:.04em; }
+  .kwbar { display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; margin:0 0 10px; font-size:13px; }
+  .kwbar input { width:210px; padding:6px 10px; font-size:13px; }
+  .chip.kw { display:inline-flex; align-items:center; gap:4px; border-color:var(--accent); color:var(--text); padding:2px 4px 2px 10px; font-size:13px; }
+  .chip.kw button { border:0; background:none; cursor:pointer; color:var(--muted); font-size:15px; line-height:1; padding:0 5px; }
+  .chip.kw button:hover { color:var(--bad); }
+  .two { display:grid; grid-template-columns:1fr 110px; gap:10px; }
+  .brow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .brow button { cursor:pointer; font-size:13px; padding:7px 12px; }
+  #smailsave { background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+  #smailstat { font-size:13px; color:var(--muted); }
+  #smailstat.bad { color:var(--bad); } #smailstat.good { color:var(--new); }
+  details.tree { border:1px solid var(--line); border-radius:8px; margin:0 0 6px; background:var(--card); }
+  details.tree > summary { cursor:pointer; padding:8px 10px; list-style:none; display:flex; align-items:center; gap:8px; }
+  details.tree > summary::-webkit-details-marker { display:none; }
+  details.tree > summary::before { content:"▸"; color:var(--muted); width:1em; }
+  details.tree[open] > summary::before { content:"▾"; }
+  details.tree .kids { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:6px 14px; padding:4px 12px 10px 30px; font-size:13px; }
+  details.tree label { display:flex; align-items:center; gap:6px; }
+  .treebar { font-size:12px; margin:2px 0 6px; }
+  a { color:var(--accent); }
+  .pill { display:inline-block; font-size:12px; font-weight:700; line-height:1.5; padding:2px 11px; border:1px solid currentColor; border-radius:99px;
+          color:var(--accent); text-decoration:none; white-space:nowrap; cursor:pointer; background:transparent; vertical-align:middle; }
+  .pill:hover, .pill:focus-visible { background:var(--accent); border-color:var(--accent); color:var(--card); outline:none; }
+  .pills { display:inline-flex; flex-wrap:wrap; align-items:center; gap:6px; }
+  .bar a:not(.pill), .note a:not(.pill) { font-weight:600; }
+  [hidden] { display:none !important; }
+  @media (max-width:640px) { .jhead { padding:10px 12px; } .acts .btn, .acts select { flex:1 1 auto; justify-content:center; } .controls select { flex:1 1 140px; max-width:none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1><span class="mark" aria-hidden="true"></span>The Quiet Quitter</h1>
+    <span class="slogan">Because a Timmy's giftcard doesn't pay the rent..</span>
+    <div class="who"><span class="km" id="me"></span><button type="button" class="iconbtn" id="workbtn" title="At work: covers this page with a spreadsheet. Press Esc twice to switch back." aria-label="At work">💼</button><button type="button" class="iconbtn" id="theme" title="Switch between light and dark" aria-label="Switch between light and dark">🌙</button><a href="#" id="logout" class="pill">Log out</a></div>
+  </div>
+  <div class="console" id="console" role="status" aria-live="polite"><span class="cprompt" aria-hidden="true">&rsaquo;</span><span id="ctext"></span><span class="ccursor typing" aria-hidden="true"></span></div>
+  <nav class="tabs"><button data-view="jobs" class="on">Jobs</button><button data-view="docs">My documents</button><button data-view="settings">Settings</button><button data-view="admin" id="admintab" hidden>Admin</button></nav>
+  <div id="view-jobs">
+  <div class="pipeline" id="pipeline"></div>
+  <div id="warn"></div>
+  <div class="bars" id="banners"></div>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search title, employer, location, union…" autofocus>
+    <select id="src"><option value="">All employers</option></select>
+    <select id="mode" title="Which postings to show">
+      <option value="it">Information Tech</option>
+      <option value="trades">Trades and Utilities</option>
+      <option value="healthcare">Healthcare and Social Services</option>
+      <option value="education">Higher Education</option>
+      <option value="uniformed">Police and Paramedics</option>
+      <option value="finance">Finance and Administrative</option>
+      <option value="keywords">My Keywords</option>
+      <option value="all">Everything</option>
+    </select>
+    <button type="button" class="fbtn" id="ftoggle" aria-expanded="false" aria-controls="fpanel">Filters<b id="fcount" hidden></b></button>
+  </div>
+  <div class="checks">
+    <label class="chk"><input type="checkbox" id="hideapplied"> Hide applied jobs</label>
+    <label class="chk"><input type="checkbox" id="union"> Unionized only</label>
+  </div>
+  <div class="alertchip chk" id="alertchip" hidden style="margin:0 0 8px"></div>
+  <div class="fpanel" id="fpanel" hidden>
+    <div class="dist">
+      <span>Distance from</span><input id="home" placeholder="L3Y" maxlength="7" aria-label="First three characters of your postal code" autocomplete="off">
+      <select id="radius"><option value="">any distance</option><option>10</option><option>20</option><option>30</option><option>50</option><option>75</option></select>
+      <span id="homeinfo"></span>
+    </div>
+    <select id="status">
+      <option value="">Any status</option>
+      <option value="none">Not applied yet</option>
+      <option value="applied_any" id="optappliedany">Applied (any stage)</option>
+      <option value="any">All tracked</option>
+      <optgroup label="Only this stage">
+        <option value="applied">Applied</option>
+        <option value="interview">Interview</option>
+        <option value="offer">Offer</option>
+        <option value="rejected">Rejected</option>
+        <option value="withdrawn">Withdrawn</option>
+      </optgroup>
+      <option value="not_interested">Not interested</option>
+    </select>
+    <label class="chk" id="newwrap" hidden><input type="checkbox" id="newonly"> New since my last visit</label>
+    <select id="sort" class="pushright" aria-label="Sort order">
+      <option value="new">Newest first</option>
+      <option value="closing">Closing soonest</option>
+      <option value="near">Nearest first</option>
+    </select>
+    <button type="button" id="fclear" title="Reset the filters in this panel">Clear</button>
+  </div>
+  <div class="kwbar" id="kwbar" hidden>
+    <span class="km">My keywords</span><span id="kwchips"></span>
+    <input id="kwadd" placeholder="Add a word and press Enter" maxlength="40" aria-label="Add a keyword" autocomplete="off">
+    <span class="km" id="kwstat"></span>
+  </div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+  <nav class="pager" id="pager" aria-label="Result pages"></nav>
+
+  <details class="sec" id="manualsec"><summary>Check manually</summary>
+  <p class="note">These boards block automated checks, so the monitor can't watch them. Open them yourself now and then.</p>
+  <div class="links" id="manual"></div>
+  </details>
+  </div>
+  <div id="view-settings" hidden>
+    <p class="note">These settings are yours alone. They set what the Jobs page shows by default and what we email you about.</p>
+    <fieldset><legend>You</legend>
+      <label class="row2"><input type="checkbox" id="sconsole"> Console chatter <span class="km">(the little typing line under the title)</span></label>
+      <label class="field">Your name <span class="km">(shown at the top of the page and used to greet you in emails)</span><input id="sname" maxlength="60" autocomplete="name" placeholder="Your full name"></label>
+    </fieldset>
+    <fieldset><legend>What do you want to see?</legend>
+      <label class="row2"><input type="radio" name="smode" value="it"> Information Tech <span class="km">(desktop support, field support, systems, networks, software…)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="trades"> Trades and Utilities <span class="km">(hydro, mechanics, electricians, operators…)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="healthcare"> Healthcare and Social Services</label>
+      <label class="row2"><input type="radio" name="smode" value="education"> Higher Education <span class="km">(universities and colleges: professors, engineers, managers, doctors…)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="uniformed"> Police and Paramedics <span class="km">(uniformed roles: police, paramedics, fire, by-law and enforcement)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="finance"> Finance and Administrative <span class="km">(admin assistants, clerks, coordinators, accounting, payroll…)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="keywords"> My Keywords <span class="km">(the words you add on the Jobs page)</span></label>
+      <label class="row2"><input type="radio" name="smode" value="all"> Everything</label>
+      <label class="field">Hide any title containing<input id="sex" placeholder="student, volunteer"></label>
+      <label class="row2"><input type="checkbox" id="sunion"> Unionized jobs only</label>
+      <div class="field" style="color:var(--muted);font-size:13px">Only these employers <span id="sempsum" style="margin-left:6px"></span></div>
+      <div class="km" style="font-size:12px">Open an area and tick the employers you want, or tick the whole area. Tick none (or tick everything) and you'll see every employer.</div>
+      <div class="treebar pills"><a href="#" id="texp" class="pill">Expand all</a><a href="#" id="tcol" class="pill">Collapse all</a><a href="#" id="tclr" class="pill">Clear all</a></div>
+      <div id="semp"></div>
+    </fieldset>
+    <fieldset><legend>Email alerts</legend>
+      <p class="note" id="smailnote" style="margin:0"></p>
+      <label class="field" id="semailwrap"><span id="semaillab">Your email address</span><input id="semail" type="email" placeholder="you@gmail.com" autocomplete="email"></label>
+      <label class="field">Mail provider
+        <select id="sprov">
+          <option value="gmail">Gmail</option>
+          <option value="icloud">Apple (iCloud Mail)</option>
+          <option value="outlook">Microsoft (Outlook.com, Hotmail, Live)</option>
+          <option value="microsoft365">Microsoft 365 (work or school)</option>
+          <option value="other">Other (your own SMTP server)</option>
+        </select>
+      </label>
+      <div id="sother" class="two" hidden>
+        <label class="field">SMTP server<input id="shost" placeholder="smtp.example.com" autocapitalize="none" autocomplete="off"></label>
+        <label class="field">Port<select id="sport"><option>587</option><option>465</option><option>2525</option></select></label>
+      </div>
+      <label class="field">App password<input id="sapp" type="password" autocomplete="new-password" placeholder="The app password from your provider"></label>
+      <p class="note" style="margin:0">An app password is a special one-off password for a single app, so your normal password stays private and you can cancel it any time.
+        How to get one:</p><p class="note pills" style="margin:0">
+        <a href="https://support.google.com/accounts/answer/185833" target="_blank" rel="noopener" class="pill">Gmail</a>
+        <a href="https://support.apple.com/en-us/102654" target="_blank" rel="noopener" class="pill">Apple</a>
+        <a href="https://support.microsoft.com/en-us/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944" target="_blank" rel="noopener">Microsoft</a>
+      </p>
+      <p class="note" id="smshint" style="margin:0" hidden>Microsoft is phasing out app passwords for some accounts. If this one is refused, a Gmail or Apple account is the easier route.</p>
+      <div class="brow">
+        <button id="smailsave" type="button">Save email settings</button>
+        <button id="smailtest" type="button">Send me a test email</button>
+        <button id="smailremove" type="button">Remove my password</button>
+        <span id="smailstat"></span>
+      </div>
+      <label class="row2" id="sownerwrap" hidden><input type="checkbox" id="sowner"> Send my IT alerts and weekly summary to my main address <span class="km">(the one set up on the server)</span></label>
+      <label class="row2"><input type="checkbox" id="salerts"> Email me new postings that match my settings</label>
+      <label class="row2"><input type="checkbox" id="sdigest"> Email me a weekly summary (Sunday morning)</label>
+      <p class="note" style="margin:0;font-size:12px">Your app password is stored encrypted on this server and is only used to send you your own alerts, from your own account to your own address. It is never shown again.</p>
+    </fieldset>
+    <button id="ssave">Save settings</button><span id="sstat"></span>
+    <fieldset style="margin-top:18px"><legend>Password</legend>
+      <p class="note" id="pnote" style="margin:0"></p>
+      <label class="field">Current password<input id="pcur" type="password" autocomplete="current-password"></label>
+      <label class="field">New password (at least 8 characters)<input id="pnew" type="password" autocomplete="new-password"></label>
+      <div><button id="pbtn" style="cursor:pointer">Change password</button><span id="pstat"></span></div>
+    </fieldset>
+  </div>
+  <div id="view-admin" hidden>
+    <p class="note">Add or remove people. Anyone you add can sign in straight away and change their own password under Settings. Your own login is managed in Portainer.</p>
+    <table class="utable" id="utable"></table>
+    <fieldset><legend>Add a person</legend>
+      <label class="field">Email address (this is their sign-in name)<input id="anew" type="email" placeholder="alex@example.com" autocapitalize="none" autocomplete="off"></label>
+      <label class="field">Temporary password<input id="apw" placeholder="at least 8 characters" autocomplete="off"></label>
+      <div><button id="agen" style="cursor:pointer">Generate</button> <button id="aadd" style="cursor:pointer;background:var(--accent);color:var(--on-accent);border-color:var(--accent)">Add person</button><span id="astat"></span></div>
+    </fieldset>
+    <fieldset><legend>Greeting text</legend>
+      <p class="note" style="margin:0">A line shown under the title after someone signs in. Leave it empty to show nothing. <code>{name}</code> becomes the person's name. A person's own greeting replaces the "Everyone" greeting.</p>
+      <label class="field">Whose greeting?<select id="fkey"></select></label>
+      <label class="field">Greeting<input id="fgreet" maxlength="200" placeholder="(nothing)"></label>
+      <div><button id="fsave" style="cursor:pointer;background:var(--accent);color:var(--on-accent);border-color:var(--accent)">Save text</button><span id="fstat" style="margin-left:10px;font-size:13px;color:var(--muted)"></span></div>
+    </fieldset>
+    <fieldset><legend>Unrecognised application forms</legend>
+      <p class="note" style="margin:0">The Autofill script quietly notes an employer's site when it doesn't recognise the form, no typed answers, just field names and labels. Turn one into a template (ask Claude), then dismiss it here.</p>
+      <table class="utable" id="rtable"></table>
+      <p class="note" id="rempty" hidden>Nothing pending.</p>
+    </fieldset>
+  </div>
+  <div id="view-docs" hidden>
+    <div class="dtabs"><button data-doc="resume" class="on">Resume</button><button data-doc="cover">Cover letter</button></div>
+    <p class="note">Only you can see these. Upload your own file (PDF, Word or text). Your original is never changed and you can always download it. Your resume also powers the Keyword Finder, Tailor Resume and the autofill profile, all of which read only the plain text of the file.</p>
+    <div class="filebox" id="filebox">
+      <div class="frow" id="fempty">
+        <span>Drop a PDF or Word file here, or</span> <button id="fbrowse" type="button">Browse…</button>
+        <span class="km">PDF, Word (.docx, .doc), OpenDocument, RTF or text · up to 5 MB</span>
+      </div>
+      <div class="frow" id="finfo" hidden>
+        <span class="fname" id="fname"></span><span class="km" id="fmeta"></span>
+        <button id="fdown" type="button" title="Your file exactly as you uploaded it">Download original</button>
+        <button id="freplace" type="button">Replace…</button>
+        <button id="fdel" type="button">Remove</button>
+        <button id="fconv" type="button" title="Download the plain text we read from your file (this is all the Keyword Finder and the AI ever see)">Download as text</button>
+      </div>
+      <input class="vh" type="file" id="fpick" accept=".pdf,.docx,.doc,.odt,.rtf,.txt" aria-label="Choose a file to upload">
+      <div class="km" id="fnote" style="font-size:12px;margin-top:6px" hidden>Your file is stored exactly as you uploaded it and is never changed. The Keyword Finder, Tailor Resume and the AI profile reader only use the plain text read from it (no images, no scanning), so a text-based PDF or Word file works best.</div>
+      <div id="fstat2"></div>
+    </div>
+    <div class="filebox" id="profbox">
+      <h3 style="margin:0 0 6px">Autofill profile</h3>
+      <p class="note" style="margin-top:0">The details application forms keep asking for. Read them from your resume once, fix anything wrong, save. The <b>Quiet Quitter Autofill</b> browser script then fills other employers' forms and attaches your resume for you. You still check it and press Submit yourself.
+        <a href="autofill.user.js">Install the script</a> (needs Tampermonkey or Violentmonkey), then open this site once while signed in so it can copy your profile.</p>
+      <div class="frow"><button id="pparse" type="button">Read it from my resume</button><button id="psave" type="button">Save profile</button><span id="pstat2" class="km"></span></div>
+      <div id="pfields" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:10px 0"></div>
+      <div id="plists"></div>
+    </div>
+  </div>
+  <footer class="foot">
+    <div id="sub">Loading…</div>
+    <div><b>Made by That Scottish Guy</b> · &copy; 2026 · <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a> · <a href="https://github.com/ThatJeffGuy/quiet-quitter" target="_blank" rel="noopener">Source on GitHub</a></div>
+  </footer>
+</main>
+<script src="/atwork.js?v=3" defer></script>
+<script>
+const $ = id => document.getElementById(id);
+const STATUSES = ["applied", "interview", "offer", "rejected", "withdrawn"];            // the application pipeline
+const ACTIONS = [...STATUSES, "not_interested"];                                       // everything the dropdown offers
+const LABEL = { not_interested: "Not interested" };
+const label = s => LABEL[s] || s.charAt(0).toUpperCase() + s.slice(1);
+function renderManual() {
+  const mode = $("mode").value;               // in a category view, list only that category's manual links
+  $("manual").innerHTML = (DATA.manual || []).filter(m => mode === "it" ? m.it !== false : !isSector(mode) || (m.modes || []).includes(mode))
+    .map(m => `<a href="${esc(m.url)}" target="_blank" rel="noopener">${esc(m.name)}<small>${esc(m.why)}</small></a>`).join("");
+}
+let DATA = { jobs: [], manual: [] };
+let TRACK = {};            // url -> {status, applied_at, notes, follow_up}
+let CAN_SAVE = false;      // true once the server's /api/track answered
+let OPEN = new Set();      // urls whose notes panel is open
+const NEW_DAYS = 7;
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const day = iso => (Date.now() - new Date(iso)) / 864e5;
+function ago(iso) {
+  if (!iso) return "before monitoring began";
+  const d = day(iso);
+  return d < 1 ? "today" : d < 2 ? "yesterday" : Math.floor(d) + " days ago";
+}
+function closesIn(iso) {                      // whole days until a YYYY-MM-DD date, in local time
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  return Math.round((new Date(iso + "T00:00:00") - t) / 864e5);
+}
+
+let PREFS = { mode: "all", keywords: [], exclude: [], union_only: false, employers: [], email: "", alerts: false, digest: false };
+let MAIL = { ready: false, from: "" };
+let MAILOWN = { configured: false };          // this person's own mailbox (the password itself is never sent to the page)
+let ME = { user: "", role: "user" };
+let SINCE = "";            // when this person last visited, from the previous session
+let FSA = null, HOME = null;   // postal-prefix table; HOME = the person's starting point (browser-only)
+const MATCH = {}, OPENM = new Set(), PACK = {}, OPENP = new Set();
+const sectorRule = m => (DATA.sector_rules || {})[m];       // the categories' rules come from the server, so page and email agree
+const isSector = m => !!sectorRule(m);
+
+const hasWord = (w, text) => new RegExp("(?<![\\w])" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![\\w])", "i").test(text);
+const effEmployers = () => {            // ticking every employer means the same as ticking none: no restriction
+  const all = (DATA.sources || []).map(s => s.name);
+  return PREFS.employers.length && all.length && all.every(n => PREFS.employers.includes(n)) ? [] : PREFS.employers;
+};
+function inSector(j, mode) {
+  const r = sectorRule(mode); if (!r) return false;
+  let title = (j.title || "").toLowerCase();
+  (r.strip || []).forEach(ph => { title = title.split(ph).join(" "); });
+  if (!((r.tags || []).includes(j.sector) || r.words.some(w => hasWord(w, title)))) return false;
+  if (r.not_it && j.it === 1) return false;
+  return !(r.unless || []).some(o => inSector(j, o));
+}
+function fitsMode(j) {                  // the same rules the server uses for email alerts
+  const title = (j.title || "").toLowerCase(), mode = $("mode").value;
+  if (PREFS.exclude.some(w => title.includes(w.toLowerCase()))) return false;
+  const emp = effEmployers();
+  if (emp.length && !$("src").value && !emp.includes(j.source)) return false;   // picking an employer on the main page overrides the saved employer list only
+  if (mode === "it") return j.it === 1;
+  if (isSector(mode)) return inSector(j, mode);
+  if (mode === "keywords") return PREFS.keywords.some(w => hasWord(w, title));
+  return true;
+}
+function kmBetween(a, b, c, d) {
+  const r = x => x * Math.PI / 180, dp = r(c - a), dl = r(d - b);
+  const h = Math.sin(dp / 2) ** 2 + Math.cos(r(a)) * Math.cos(r(c)) * Math.sin(dl / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+function renderKw() {
+  $("kwbar").hidden = $("mode").value !== "keywords";
+  $("kwchips").innerHTML = !PREFS.keywords.length ? '<span class="km">none yet</span>' : PREFS.keywords.map((k, i) => `<span class="chip kw">${esc(k)}<button type="button" data-kw="${i}" aria-label="Remove ${esc(k)}">×</button></span>`).join(" ");
+}
+async function saveKeywords(list) {
+  const prev = PREFS.keywords; PREFS.keywords = list; renderKw(); render(); $("kwstat").textContent = "Saving…";
+  try {
+    const r = await fetch("api/prefs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ keywords: list }) });
+    if (r.status === 401) return location.reload();
+    if (!r.ok) throw new Error(r.status);
+    PREFS = (await r.json()).prefs; $("kwstat").textContent = "Saved";
+  } catch { PREFS.keywords = prev; renderKw(); render(); $("kwstat").textContent = "Couldn't save that. Try again."; }
+}
+$("kwadd").addEventListener("keydown", e => {
+  if (e.key !== "Enter" && e.key !== ",") return;
+  e.preventDefault();
+  const add = $("kwadd").value.split(/[,\n]/).map(x => x.trim()).filter(Boolean), have = new Set(PREFS.keywords.map(x => x.toLowerCase()));
+  const next = [...PREFS.keywords, ...add.filter(x => !have.has(x.toLowerCase()) && have.add(x.toLowerCase()))].slice(0, 30);
+  $("kwadd").value = ""; if (next.length !== PREFS.keywords.length) saveKeywords(next);
+});
+$("kwchips").addEventListener("click", e => {
+  const b = e.target.closest("button[data-kw]"); if (b) saveKeywords(PREFS.keywords.filter((_, i) => i !== Number(b.dataset.kw)));
+});
+
+function render() {
+  renderKw();
+  const q = $("q").value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const src = $("src").value, st = $("status").value, unionOnly = $("union").checked, mode = $("mode").value;
+  const hideApplied = $("hideapplied").checked;
+  const radius = HOME ? Number($("radius").value) || 0 : 0, newOnly = $("newonly").checked && SINCE;
+  DATA.jobs.forEach(j => { j._km = HOME && j.lat != null ? kmBetween(HOME.lat, HOME.lon, j.lat, j.lon) : null; });
+  let rows = DATA.jobs.filter(j => {
+    const t = TRACK[j.url];
+    const pinned = t && st && st !== "none";                       // a tracked job follows the filters, unless you're filtering by status
+    if (t && t.status === "not_interested" && st !== "not_interested") return false;   // hidden for this person only
+    if (!fitsMode(j) && !pinned) return false;
+    if (hideApplied && !st && t && STATUSES.includes(t.status)) return false;                // already applied, at any stage
+    if (src && !employersIn(src).includes(j.source)) return false;
+    if (unionOnly && !(j.union && j.union !== "Non-union")) return false;
+    if (st === "none" && t) return false;
+    if (st === "any" && !t) return false;
+    if (st === "applied_any" && !(t && STATUSES.includes(t.status))) return false;
+    if (st && !["none", "any", "applied_any"].includes(st) && (!t || t.status !== st)) return false;
+    if (j.closed && !pinned) return false;
+    if (newOnly && !(j.first_seen && j.first_seen > SINCE)) return false;
+    if (radius && !pinned && !j.remote && j._km !== null && j._km > radius) return false;   // unknown locations are kept
+    return q.every(w => (j.title + " " + j.source + " " + j.location + " " + (j.union || "")).toLowerCase().includes(w));
+  });
+  const sort = $("sort").value;
+  if (sort === "closing") rows.sort((a, b) => (a.closes || "9999").localeCompare(b.closes || "9999"));
+  if (sort === "near") rows.sort((a, b) => (a._km ?? 1e9) - (b._km ?? 1e9));
+  const declined = DATA.jobs.filter(j => !j.closed && TRACK[j.url] && TRACK[j.url].status === "not_interested").length;
+  const pages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  if (PAGE >= pages) PAGE = pages - 1;
+  const first = PAGE * PAGE_SIZE, shown = rows.slice(first, first + PAGE_SIZE);
+  $("count").innerHTML = `${rows.length} posting${rows.length === 1 ? "" : "s"}${radius ? ` within ${radius} km` : ""}${pages > 1 ? ` · showing ${first + 1}–${first + shown.length}` : ""}` +
+    (declined && st !== "not_interested" ? ` <a href="#" id="showni" class="pill">${declined} hidden as not interested</a>` : "") +
+    (st === "not_interested" ? ` <a href="#" id="shownormal" class="pill">back to the normal list</a>` : "");
+  const hint =
+    mode === "keywords" && !PREFS.keywords.length ? "You haven't added any keywords yet. Type one in the box above and press Enter." :
+    mode === "it" ? "No core IT postings match. Try “Everything”." : "Nothing matches your filters.";
+  $("list").innerHTML = rows.length ? shown.map(card).join("") : `<div class="empty">${hint}</div>`;
+  drawPager(rows.length);
+  banners(rows);
+  alertChip();
+  updateCount();
+}
+function paintApplied() {
+  const n = Object.values(TRACK).filter(t => STATUSES.includes(t.status)).length;
+  $("optappliedany").textContent = n ? `Applied (any stage) · ${n}` : "Applied (any stage)";
+}
+function drawPager(total) {
+  const pages = Math.ceil(total / PAGE_SIZE); let html = "";
+  if (pages > 1) {
+    const list = [...new Set([0, pages - 1, PAGE - 1, PAGE, PAGE + 1].filter(p => p >= 0 && p < pages))].sort((a, b) => a - b), out = [];
+    out.push(`<button type="button" data-page="${PAGE - 1}" aria-label="Previous page"${PAGE === 0 ? " disabled" : ""}>‹</button>`);
+    list.forEach((p, i) => { if (i && p - list[i - 1] > 1) out.push('<span class="gap">…</span>'); out.push(`<button type="button" data-page="${p}"${p === PAGE ? ' class="on" aria-current="page"' : ""}>${p + 1}</button>`); });
+    out.push(`<button type="button" data-page="${PAGE + 1}" aria-label="Next page"${PAGE >= pages - 1 ? " disabled" : ""}>›</button>`);
+    const first = PAGE * PAGE_SIZE + 1, last = Math.min(total, (PAGE + 1) * PAGE_SIZE);
+    html = `<div class="pg-btns">${out.join("")}</div><div class="pg-info">Showing ${first}–${last} of ${total} · page ${PAGE + 1} of ${pages}</div>`;
+  }
+  $("pager").innerHTML = html;
+}
+$("pager").addEventListener("click", e => {
+  const b = e.target.closest("button[data-page]"); if (!b || b.disabled) return;
+  PAGE = +b.dataset.page; render(); $("count").scrollIntoView({ block: "start" });      // back to the top of the results
+});
+function updateCount() {
+  paintApplied();
+  const hold = !!$("status").value;                              // a status is already chosen, so hiding applied jobs makes no sense
+  $("hideapplied").disabled = hold;
+  $("hideapplied").closest("label").title = hold ? "Not used while a status is chosen in Filters" : "Hide everything you've already applied to";
+  const n = ($("status").value ? 1 : 0) + ($("newonly").checked && SINCE ? 1 : 0) + (HOME && Number($("radius").value) ? 1 : 0);
+  $("fcount").hidden = !n; $("fcount").textContent = n;
+  const ca = $("collapseall");
+  if (EXP.size && !ca) $("count").insertAdjacentHTML("beforeend", ' <a href="#" id="collapseall" class="pill">Collapse all</a>');
+  else if (!EXP.size && ca) ca.remove();
+}
+
+function alertChip() {                  // viewing an employer your saved email list doesn't cover: offer to add it
+  const el = $("alertchip"), picked = $("src").value, emp = effEmployers();
+  let hushed = []; try { hushed = JSON.parse(store.get("qq_alert_dismissed") || "[]"); } catch {}
+  const members = picked ? employersIn(picked) : [], missing = members.filter(n => !emp.includes(n));
+  el.hidden = !(CAN_SAVE && picked && emp.length && missing.length && !hushed.includes(picked));
+  if (el.hidden) return;
+  const what = picked.startsWith("group:") ? `${missing.length} of ${members.length} not in my email alerts` : "Not in my email alerts";
+  el.innerHTML = `<span title="Your email alerts follow your saved employer list, and ${missing.length > 1 ? "these employers aren't" : "this employer isn't"} on it.">✉ ${what}</span><button data-emp="${esc(picked)}" data-act="add">Add</button><button data-emp="${esc(picked)}" data-act="hide" title="Don't show this again for this employer">✕</button>`;
+}
+$("alertchip").addEventListener("click", async e => {
+  const btn = e.target.closest("button"); if (!btn) return;
+  const name = btn.dataset.emp;
+  if (btn.dataset.act === "hide") {
+    let list = []; try { list = JSON.parse(store.get("qq_alert_dismissed") || "[]"); } catch {}
+    store.set("qq_alert_dismissed", JSON.stringify([...new Set([...list, name])]));
+    return alertChip();
+  }
+  btn.disabled = true; btn.textContent = "Adding…";
+  try {
+    const r = await fetch("api/prefs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ employers: [...new Set([...PREFS.employers, ...employersIn(name)])] }) });
+    if (r.status === 401) return location.reload();
+    if (!r.ok) throw new Error(r.status);
+    PREFS = (await r.json()).prefs;
+    buildSettings(); render();
+  } catch { btn.disabled = false; btn.textContent = "Retry"; }
+});
+
+function banners(shown) {
+  const out = [];
+  const due = Object.entries(TRACK).filter(([, t]) => t.follow_up && closesIn(t.follow_up) <= 0 && ["applied", "interview"].includes(t.status));
+  if (due.length) {
+    const byUrl = Object.fromEntries(DATA.jobs.map(j => [j.url, j]));
+    out.push(`<div class="bar due"><b>Follow up today:</b> ${due.slice(0, 4).map(([u]) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(byUrl[u] ? byUrl[u].title : "a posting")}</a>`).join(" · ")}${due.length > 4 ? ` · +${due.length - 4} more` : ""}</div>`);
+  }
+  if (SINCE) {
+    const n = DATA.jobs.filter(j => !j.closed && j.first_seen && j.first_seen > SINCE && fitsMode(j) && !(TRACK[j.url] && TRACK[j.url].status === "not_interested")).length;
+    $("newwrap").hidden = !n && !$("newonly").checked;
+    if (n) out.push(`<div class="bar"><b>${n} new posting${n === 1 ? "" : "s"}</b> since you were last here (${new Date(SINCE).toLocaleDateString([], { dateStyle: "medium" })}).<button id="shownew">${$("newonly").checked ? "Show all" : "Show only these"}</button></div>`);
+  }
+  $("banners").innerHTML = out.join("");
+}
+$("pipeline").addEventListener("click", e => {
+  const a = e.target.closest("a[data-st]"); if (!a) return;
+  e.preventDefault();
+  PAGE = 0;
+  const on = $("status").value === a.dataset.st;                // click again to clear
+  $("status").value = on ? "" : a.dataset.st;
+  if (!on && $("fpanel").hidden) setFilters(true);
+  render();
+});
+$("count").addEventListener("click", e => {
+  if (e.target.id === "collapseall") { e.preventDefault(); EXP.clear(); OPENM.clear(); OPENP.clear(); OPEN.clear(); return render(); }
+  if (e.target.id === "showni" || e.target.id === "shownormal") { e.preventDefault(); PAGE = 0; $("status").value = e.target.id === "showni" ? "not_interested" : ""; render(); }
+});
+$("banners").addEventListener("click", async e => {
+  if (e.target.id === "shownew") { $("newonly").checked = !$("newonly").checked; render(); }
+});
+
+const EXP = new Set();     // urls whose card is expanded
+const PAGE_SIZE = 15;      // the same for everyone: 15 postings a page
+let PAGE = 0;              // the page being shown (0-based); filters send it back to the first page
+const GROUP_OF = {};       // employer name -> its area (York Region, Toronto...)
+const employersIn = pick => pick.startsWith("group:") ? Object.keys(GROUP_OF).filter(n => GROUP_OF[n] === pick.slice(6)) : [pick];
+function mailtoFor(j) {
+  const lines = [j.title, j.source + (j.location ? " · " + j.location : ""), j.pay || "", j.closes ? "Closes " + j.closes : "", "", j.url].filter((x, i) => x || i === 4);
+  return "mailto:?subject=" + encodeURIComponent(`Job posting: ${j.title} at ${j.source}`) + "&body=" + encodeURIComponent("Thought you might be interested in this one:\r\n\r\n" + lines.join("\r\n"));
+}
+function card(j) {
+  const t = TRACK[j.url];
+  const isNew = j.first_seen && (SINCE ? j.first_seen > SINCE : day(j.first_seen) < NEW_DAYS);
+  const left = j.closes ? closesIn(j.closes) : null;
+  const closeTxt = left === null ? "" : left < 0 ? "" : left === 0 ? "closes today" : left === 1 ? "closes tomorrow" : `closes ${j.closes} (${left} days)`;
+  const exp = EXP.has(j.url), open = OPEN.has(j.url);
+  const done = t && ["rejected", "withdrawn", "not_interested"].includes(t.status);
+  const dist = j.remote ? "remote / hybrid" : j._km === null ? (HOME ? "location unknown" : "") : `≈ ${Math.max(1, Math.round(j._km))} km`;
+  const head = `<div class="jhead" role="button" tabindex="0" aria-expanded="${exp}">
+      <div class="jmain">
+        <div class="title">${esc(j.title)}${isNew ? '<span class="badge new">NEW</span>' : ""}${j.it === 2 ? '<span class="badge it">IT ADJACENT</span>' : j.it === 1 && $("mode").value !== "it" ? '<span class="badge it">IT</span>' : ""}${j.union && j.union !== "Non-union" ? `<span class="badge union">${esc(j.union)}</span>` : ""}${j.closed ? '<span class="badge closed">NO LONGER POSTED</span>' : ""}</div>
+        <div class="meta"><span>${esc(j.source)}</span>${j.location ? `<span>${esc(j.location)}</span>` : ""}${dist ? `<span class="km" title="Straight-line distance from your postal area, approximate">${esc(dist)}</span>` : ""}${j.pay ? `<span class="pay">${esc(j.pay)}</span>` : ""}${closeTxt ? `<span class="${left <= 3 ? "soon" : ""}">${esc(closeTxt)}</span>` : ""}<span>${j.first_seen ? "first seen " : "listed "}${ago(j.first_seen)}</span>${t && t.follow_up ? `<span>follow up ${esc(t.follow_up)}</span>` : ""}</div>
+      </div>
+      <div class="jside">${t ? `<span class="spill${done ? " off" : ""}">${esc(label(t.status))}</span>` : ""}<span class="chev" aria-hidden="true">▾</span></div>
+    </div>`;
+  if (!exp) return `<article class="job${done || j.closed ? " dim" : ""}" data-url="${esc(j.url)}">${head}</article>`;
+  const work = (OPENM.has(j.url) ? matchPanel(MATCH[j.url]) : "") + (OPENP.has(j.url) ? packPanel(j.url) : "") +
+    (open && t ? `<div class="panel">
+      <textarea placeholder="Notes: who you spoke to, what you sent, next steps…">${esc(t.notes)}</textarea>
+      <label>Follow up on<input type="date" value="${esc(t.follow_up)}"></label>
+      <button data-act="save">Save</button>
+    </div>` : "") || (CAN_SAVE ? `<div class="hintline">Keyword Finder and Tailor Resume run here, right under the posting.</div>` : "");
+  return `<article class="job exp${done || j.closed ? " dim" : ""}" data-url="${esc(j.url)}">${head}
+    <div class="jbody">
+      <div class="acts">
+        <a class="btn primary" data-act="view" href="${esc(j.url)}" target="_blank" rel="noopener noreferrer" title="Opens the posting in a new tab without leaving this page (Ctrl/Cmd-click or middle-click always opens it in the background)">View job post ↗</a>
+        ${CAN_SAVE ? `<button class="btn" data-act="match" title="See which of this posting's key terms are in your resume">Keyword Finder</button>
+        <button class="btn" data-act="pack" title="Make a copy of your resume, plus a cover letter, customized for this posting">Tailor Resume</button>
+        <select class="st${t ? " set" : ""}" data-act="status" aria-label="Application status">
+          <option value="none">Not applied</option>
+          ${ACTIONS.map(s => `<option value="${s}"${t && t.status === s ? " selected" : ""}>${label(s)}</option>`).join("")}
+        </select>
+        ${t ? `<button class="btn${t.notes || t.follow_up ? " has" : ""}" data-act="toggle" title="Notes and follow-up date" aria-label="Notes and follow-up date">📝 Notes</button>` : ""}` : ""}
+        <details class="share"><summary class="btn">Share ▾</summary><div class="menu">
+          <a href="${esc(mailtoFor(j))}">✉ Email to someone</a>
+          <button type="button" data-act="copy" data-link="${esc(j.url)}">Copy link</button>
+          ${navigator.share ? `<button type="button" data-act="nshare" data-link="${esc(j.url)}" data-title="${esc(j.title)}">Share…</button>` : ""}
+        </div></details>
+      </div>
+      <div class="work">${work}</div>
+    </div>
+  </article>`;
+}
+function refreshCard(url) {
+  const j = DATA.jobs.find(x => x.url === url), el = [...$("list").children].find(c => c.dataset && c.dataset.url === url);
+  if (!j || !el) return render();
+  el.outerHTML = card(j);
+}
+async function openBg(href) {           // a new tab that doesn't take focus (a modifier-click is how browsers do "open in background")
+  const a = document.createElement("a");
+  a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer"; a.style.display = "none";
+  document.body.appendChild(a);
+  a.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window, ctrlKey: true, metaKey: true }));
+  a.remove();
+  window.focus();
+}
+
+const VERDICT = { strong: "Strong fit", fair: "Reasonable fit", stretch: "A stretch" }, SICON = { met: "✅", partial: "🟡", gap: "❌" };
+const MDESC = `<div class="km" style="margin-bottom:6px">The Keyword Finder reads this posting and your resume side by side: first a quick count of the posting's key terms that appear in your resume, then an AI reading of what the job actually requires and where your resume shows it. Tick keywords that are <b>true for you</b> to add them to a copy of your resume.</div>`;
+function chip(m, t, cls) { const on = m.ticked && m.ticked.has(t); return `<span class="chip ${cls} pick${on ? " on" : ""}" role="checkbox" tabindex="0" aria-checked="${!!on}" data-term="${esc(t)}">${esc(t)}</span>`; }
+function aiBlock(m) {
+  if (m.ai === undefined || (m.ai && m.ai.error === "no_model")) return "";
+  if (m.ai === "busy") return `<div class="km" style="margin:10px 0">Reading the posting against your resume with the AI model… (about 15 seconds)</div>`;
+  if (m.ai.error) return `<div class="km" style="margin:10px 0">The AI reading isn't available right now.</div>`;
+  const a = m.ai;
+  return `<div style="margin:12px 0;padding-top:10px;border-top:1px dashed var(--line)">
+    <b>AI reading: ${VERDICT[a.verdict] || "Reasonable fit"}</b>
+    ${a.role_summary ? `<div style="margin:4px 0 8px">${esc(a.role_summary)}</div>` : ""}
+    <div class="km">What the posting asks for, and where your resume shows it</div>
+    ${a.requirements.map(r => `<div style="display:grid;grid-template-columns:1.6em 1fr;gap:2px 6px;margin:6px 0">
+      <span title="${r.status === "met" ? "Your resume shows this" : r.status === "partial" ? "Related experience" : "Not shown in your resume"}">${SICON[r.status]}</span>
+      <div>${esc(r.need)} ${r.level === "must" ? '<span class="badge it">MUST</span>' : '<span class="km">(asset)</span>'}
+        ${r.evidence ? `<div class="km" style="font-style:italic">“${esc(r.evidence)}”</div>` : ""}
+        ${r.keyword ? `<div class="chips" style="margin:3px 0 0">${chip(m, r.keyword, "miss")} <span class="km">add if true</span></div>` : ""}</div></div>`).join("")}
+    <div class="km" style="margin-top:6px">This is a reading aid made by a small AI model. The quotes are checked against your resume, but the judgments can be wrong, so use your own.</div></div>`;
+}
+function matchPanel(m) {
+  if (!m) return `<div class="mpanel">Checking…</div>`;
+  if (m.error === "no_resume") return `<div class="mpanel">Upload your resume under <b>My documents</b> first, then try again.</div>`;
+  if (m.error === "no_text") return `<div class="mpanel">We couldn't read any text in your uploaded resume (it may be a scanned image). Upload a text-based PDF or Word file and try again.</div>`;
+  if (m.error) return `<div class="mpanel">Couldn't compare this one.</div>`;
+  if (!m.terms) return `<div class="mpanel">${MDESC}There isn't enough text in this posting to compare.</div>`;
+  return `<div class="mpanel">${MDESC}<b>${m.score}% of this posting's key terms are in your resume</b> <span class="km">(${m.basis === "title only" ? "based on the title only, so treat as rough" : "based on the full posting"})</span>
+    <div class="meter"><i style="width:${m.score}%"></i></div>
+    ${m.matched.length ? `<div class="km">In your resume</div><div class="chips">${m.matched.map(t => `<span class="chip have">${esc(t)}</span>`).join("")}</div>` : ""}
+    ${m.missing.length ? `<div class="km">Not found in your resume (add them only if they're true)</div><div class="chips">${m.missing.map(t => chip(m, t, "miss")).join("")}</div>` : ""}
+    ${aiBlock(m)}
+    <button type="button" class="mt" data-act="tailor" title="A quick copy of your resume with the ticked keywords added under Skills">Download resume copy with ticked keywords</button> <span class="km" data-tstat></span>
+    <div class="km" style="margin-top:4px">For a full customized resume and cover letter, use <b>Tailor Resume</b>.</div></div>`;
+}
+
+const PKERR = { no_resume: "Upload your resume under <b>My documents</b> first.", no_profile: "Fill in your name under <b>My documents → Autofill profile</b> and save it first.",
+  no_model: "The AI model isn't connected, so drafts aren't available.", model_failed: "The AI model didn't answer. Try again in a minute.",
+  unknown_job: "This posting isn't in the database any more.", no_file: "Upload your resume under <b>My documents</b> first." };
+function reqBlock(p) {
+  const r = p.requirements || {}, bits = [];
+  if (r.cover_letter) bits.push("a cover letter");
+  (r.documents || []).forEach(d => bits.push(d.toLowerCase()));
+  const qs = r.questions || [];
+  if (!bits.length && !qs.length) return "";
+  return `<div style="margin:8px 0;padding:8px 10px;border:1px solid var(--line);border-radius:8px"><b>This posting asks for</b> ${bits.length ? esc(bits.join(", ")) : "written answers"}${bits.length && qs.length ? " and written answers" : ""}.
+    <span class="km">(Only what the posting itself says. The application form may ask more.)</span>
+    ${qs.map((q, i) => { const a = (p.answers || {})[i] || {}; return `<div style="margin:8px 0"><div style="font-style:italic">“${esc(q)}”</div>
+      <div class="frow" style="margin:4px 0"><button type="button" class="mt" data-act="packq" data-i="${i}">${a.text ? "Redraft answer" : "Draft an answer"}</button><span class="km">${a.busy ? "Writing… (about 15 seconds)" : esc(a.msg || "")}</span></div>
+      ${a.text !== undefined ? `<textarea data-qa="${i}" style="min-height:9rem">${esc(a.text)}</textarea>` : ""}
+      ${a.starters && a.starters.length ? `<ul style="margin:4px 0 4px 18px">${a.starters.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
+      ${a.warn ? `<div class="warn" style="margin:4px 0">${a.warn}</div>` : ""}</div>`; }).join("")}</div>`;
+}
+function packPanel(url) {
+  const p = PACK[url];
+  if (!p) return `<div class="mpanel">Preparing…</div>`;
+  if (p.busy) return `<div class="mpanel">${esc(p.busy)} <span class="km">(the AI model can take up to a minute)</span></div>`;
+  if (p.error) return `<div class="mpanel">${PKERR[p.error] || "Couldn't prepare this one."}</div>`;
+  const e = p.employer, f = (k, lab, v) => `<label class="field" style="margin:0">${lab}<input data-pk="${k}" value="${esc(v || "")}"></label>`;
+  return `<div class="mpanel pk" data-url="${esc(url)}">
+    <div class="km" style="margin-bottom:6px">Tailor Resume makes a <b>separate copy</b> of your resume for this posting (your original is never touched): a summary written for the job, your own most relevant lines pulled to the top, and any keywords you confirm, plus a matching cover letter. The AI only works from your resume's text, and anything it says that your resume doesn't support is flagged. Read and edit everything before you use it.</div>
+    <b>Tailored resume and cover letter for ${esc(p.title)}</b> <span class="km">(${p.basis === "title only" ? "drafted from the title only, so it's generic" : "drafted from the full posting"}. Drafts, not final: read and edit everything.)</span>
+    ${p.check_numbers && p.check_numbers.length ? `<div class="warn" style="margin:8px 0">Check these figures, they aren't in your resume or the posting: <b>${p.check_numbers.map(esc).join(", ")}</b></div>` : ""}
+    ${p.check_terms && p.check_terms.length ? `<div class="warn" style="margin:8px 0">The draft mentions things your resume doesn't: <b>${p.check_terms.map(esc).join(", ")}</b>. Delete them unless they're true.</div>` : ""}
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px;margin:8px 0">
+      ${f("e_name", "Employer", e.name)}${f("e_address", "Street address", e.address)}${f("e_city", "City", e.city)}${f("e_province", "Province", e.province)}${f("e_postal", "Postal code", e.postal)}${f("contact", "Hiring contact (optional)", p.contact)}
+    </div>
+    ${reqBlock(p)}
+    <div class="frow" style="margin:8px 0">Tone <select data-act="packtone" aria-label="Cover letter tone">${[["professional","Professional"],["warm","Warm"],["concise","Concise"]].map(([v, l]) => `<option value="${v}"${(p.tone || "professional") === v ? " selected" : ""}>${l}</option>`).join("")}</select>
+      <button type="button" class="mt" data-act="packredo" title="Write a fresh draft in this tone (replaces your edits)">Redraft</button></div>
+    ${p.cover_skipped && !p.cover ? `<div class="km" style="margin:8px 0">This posting doesn't ask for a cover letter. <button type="button" class="mt" data-act="packcover">Write one anyway</button></div>`
+      : `<label class="field">Cover letter body<textarea data-pk="cover" style="min-height:26rem">${esc(p.cover)}</textarea></label>`}
+    <label class="field">Resume summary for this job <span class="km">(replaces the Profile/Summary paragraph in the copy)</span><textarea data-pk="summary" style="min-height:9rem">${esc(p.summary)}</textarea></label>
+    ${p.hl && p.hl.length ? `<div class="field" style="margin:10px 0"><div>Lines from your resume to put first for this job <span class="km">(copied exactly from your resume and added as a “Relevant highlights” section under the summary)</span></div>
+      ${p.hl.map((x, i) => `<label style="display:flex;gap:8px;align-items:flex-start;margin:4px 0;color:var(--text)"><input type="checkbox" data-hl="${i}"${x.on ? " checked" : ""} style="width:auto;margin-top:3px"><span>${esc(x.t)}</span></label>`).join("")}</div>` : ""}
+    <label class="field">Keywords that are true for you, to list in the resume copy <span class="km">(comma separated, optional)</span><textarea data-pk="terms" style="min-height:6rem">${esc(p.terms || "")}</textarea></label>
+    <div class="frow"><button type="button" class="mt" data-act="packbuild">Save tailored copy</button>${p.done ? `<span class="km">Saved. Download:</span>
+      ${p.cover ? `<a href="api/apply/pack/file?id=${p.done.id}&kind=cover&fmt=docx">Cover letter (Word)</a> · <a href="api/apply/pack/file?id=${p.done.id}&kind=cover&fmt=pdf">PDF</a> ·` : ""}
+      <a href="api/apply/pack/file?id=${p.done.id}&kind=resume&fmt=docx">Resume (Word)</a> · <a href="api/apply/pack/file?id=${p.done.id}&kind=resume&fmt=pdf">PDF</a>` : ""}
+      <span class="km" data-pkstat>${p.msg ? esc(p.msg) : ""}</span></div>
+    ${p.done ? `<div class="km" style="margin-top:6px">${p.done.summary_applied ? "" : "Your resume has no Profile/Summary heading, so the summary wasn't changed. "}${p.done.highlights_applied ? "" : (p.hl && p.hl.some(x => x.on) ? "The highlights section couldn't be placed (no Profile, Summary or Skills heading found). " : "")}The browser autofill script will attach these two files when you apply to this posting (open this site once so it picks them up).</div>` : ""}
+  </div>`;
+}
+
+async function draftPack(url, tone) {
+  PACK[url] = { busy: "Reading the posting and tailoring…", tone }; render();
+  try {
+    const r = await fetch("api/apply/draft", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url, tone }) });
+    if (r.status === 401) return location.reload();
+    const j = await r.json();
+    PACK[url] = j.error ? { error: j.error } : { ...j, hl: (j.highlights || []).map(t => ({ t, on: true })) };
+  } catch { PACK[url] = { error: "failed" }; }
+  render();
+}
+async function post(body) {
+  const r = await fetch("api/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  if (r.status === 401) { location.reload(); return new Promise(() => {}); }
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+function fail() { $("warn").innerHTML = `<div class="warn">Couldn't save that change. Try again.</div>`; }
+
+$("list").addEventListener("change", async e => {
+  const sel = e.target.closest("select[data-act=status]");
+  if (!sel) return;
+  const url = sel.closest(".job").dataset.url;
+  try { TRACK = await post({ url, status: sel.value }); if (sel.value === "none") OPEN.delete(url); chat("status", sel.value); } catch { fail(); }
+  summary(); render();
+});
+$("list").addEventListener("change", e => {
+  const t = e.target.closest("select[data-act=packtone]"); if (t) { const url = t.closest(".pk").dataset.url; PACK[url].tone = t.value; return; }
+  const c = e.target.closest("input[data-hl]"); if (c) { const url = c.closest(".pk").dataset.url; PACK[url].hl[+c.dataset.hl].on = c.checked; if (PACK[url].done) delete PACK[url].done; }
+});
+$("list").addEventListener("input", e => {                 // keep edits to a Tailor Resume draft, so a re-render never loses them
+  const qa = e.target.closest("[data-qa]");
+  if (qa) { PACK[qa.closest(".pk").dataset.url].answers[+qa.dataset.qa].text = qa.value; return; }
+  const i = e.target.closest("[data-pk]"); if (!i) return;
+  const url = i.closest(".pk").dataset.url, p = PACK[url], k = i.dataset.pk;
+  if (k.startsWith("e_")) p.employer[k.slice(2)] = i.value; else p[k] = i.value;
+  if (p.done) delete p.done;                                // edited since the last save
+}, true);
+$("list").addEventListener("keydown", e => {
+  const head = e.target.classList && e.target.classList.contains("jhead") ? e.target : null;
+  if (head && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleCard(head.closest(".job").dataset.url); }
+});
+document.addEventListener("click", e => { document.querySelectorAll("details.share[open]").forEach(d => { if (!d.contains(e.target)) d.removeAttribute("open"); }); });
+$("list").addEventListener("click", e => {
+  const c = e.target.closest(".chip.pick"); if (!c) return;
+  const url = c.closest(".job").dataset.url, m = MATCH[url]; if (!m) return;
+  m.ticked = m.ticked || new Set();
+  m.ticked.has(c.dataset.term) ? m.ticked.delete(c.dataset.term) : m.ticked.add(c.dataset.term);
+  c.classList.toggle("on"); c.setAttribute("aria-checked", c.classList.contains("on"));
+});
+function toggleCard(url) {
+  if (EXP.has(url)) { EXP.delete(url); OPENM.delete(url); OPENP.delete(url); OPEN.delete(url); } else EXP.add(url);   // drafts stay saved while collapsed
+  refreshCard(url); updateCount();
+}
+$("list").addEventListener("click", async e => {
+  const view = e.target.closest("a[data-act=view]");
+  if (view) { say(ph("one.open_post"), { think: false }); if (e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey) { e.preventDefault(); openBg(view.href); } return; }
+  const head = e.target.closest(".jhead");
+  if (head) return toggleCard(head.closest(".job").dataset.url);
+  const sh = e.target.closest("details.share a"); if (sh) { say(ph("one.gossip"), { think: false }); setTimeout(() => sh.closest("details").removeAttribute("open"), 50); return; }
+  const b = e.target.closest("button[data-act]");
+  if (!b) return;
+  const card = b.closest(".job"), url = card.dataset.url;
+  if (b.dataset.act === "copy") { say(ph("one.copy"), { think: false });
+    try { await navigator.clipboard.writeText(b.dataset.link); b.textContent = "Copied ✓"; } catch { b.textContent = "Press Ctrl+C on the link instead"; }
+    return setTimeout(() => b.closest("details") && b.closest("details").removeAttribute("open"), 900);
+  }
+  if (b.dataset.act === "nshare") { b.closest("details").removeAttribute("open"); try { await navigator.share({ title: b.dataset.title, url: b.dataset.link }); } catch {} return; }
+  if (b.dataset.act === "toggle") { OPEN.has(url) ? OPEN.delete(url) : OPEN.add(url); return render(); }
+  if (b.dataset.act === "pack" || b.dataset.act === "packredo") {
+    const redo = b.dataset.act === "packredo";
+    if (!redo && OPENP.has(url)) { OPENP.delete(url); return render(); }
+    say(ph(redo ? "one.tailor_redo" : "one.tailor"));
+    OPENP.add(url);
+    if (!redo && PACK[url] && !PACK[url].error && !PACK[url].busy) return render();
+    if (redo && !confirm("Write a fresh draft? This replaces what's in the boxes now.")) return;
+    return draftPack(url, redo && PACK[url] ? PACK[url].tone : "professional");
+  }
+  if (b.dataset.act === "packcover") {
+    const p = PACK[url]; p.busy = "Writing a cover letter…"; render();
+    try {
+      const r = await fetch("api/apply/draft", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url, tone: p.tone || "professional", force_cover: true }) });
+      const j = await r.json(); delete p.busy;
+      if (j.cover) { p.cover = j.cover; p.cover_skipped = false; p.check_terms = j.check_terms; p.check_numbers = j.check_numbers; } else p.msg = "Couldn't write it. Try again.";
+    } catch { delete p.busy; p.msg = "Couldn't write it. Try again."; }
+    return render();
+  }
+  if (b.dataset.act === "packq") {
+    const p = PACK[url], i = +b.dataset.i; p.answers = p.answers || {}; p.answers[i] = { ...(p.answers[i] || {}), busy: true, msg: "" }; render();
+    try {
+      const r = await fetch("api/answer", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: p.requirements.questions[i], url, max_words: 200 }) });
+      if (r.status === 401) return location.reload();
+      const j = await r.json();
+      p.answers[i] = j.answer ? { text: j.answer, warn: [j.removed ? `Removed ${j.removed} sentence${j.removed > 1 ? "s" : ""} your resume doesn't support.` : "", j.check_terms && j.check_terms.length ? "Mentions things your resume doesn't: <b>" + j.check_terms.map(esc).join(", ") + "</b>." : "", j.check_numbers && j.check_numbers.length ? "Check these figures: <b>" + j.check_numbers.map(esc).join(", ") + "</b>." : ""].filter(Boolean).join(" ") }
+        : { msg: j.message || (j.error === "slow_down" ? "Slow down a little and try again." : "Couldn't draft this one."), starters: j.starters };
+    } catch { p.answers[i] = { msg: "Couldn't draft this one." }; }
+    return render();
+  }
+  if (b.dataset.act === "packbuild") {
+    const box = b.closest(".pk"), p = PACK[url];
+    p.busy = "Building your files…"; render();
+    try {
+      const r = await fetch("api/apply/build", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url,
+        employer: { name: p.employer.name, address: p.employer.address, city: p.employer.city, province: p.employer.province, postal: p.employer.postal },
+        contact: p.contact || "", cover: p.cover, summary: p.summary, terms: p.terms || "", highlights: (p.hl || []).filter(x => x.on).map(x => x.t) }) });
+      if (r.status === 401) return location.reload();
+      const j = await r.json();
+      delete p.busy;
+      if (j.error) p.msg = j.message || "Couldn't build the files."; else { p.done = { id: j.pack.id, summary_applied: j.summary_applied, highlights_applied: j.highlights_applied }; p.msg = ""; }
+    } catch { delete p.busy; p.msg = "Couldn't build the files."; }
+    return render();
+  }
+  if (b.dataset.act === "tailor") {
+    const terms = [...card.querySelectorAll(".chip.pick.on")].map(c => c.dataset.term), st = card.querySelector("[data-tstat]");
+    if (!terms.length) { st.textContent = "Tick at least one keyword."; return; }
+    st.textContent = "Making your copy…";
+    const r = await fetch("api/docs/tailor", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ terms }) });
+    if (!r.ok) { const j = await r.json().catch(() => ({})); st.textContent = j.message || "Couldn't make the copy. Check that your resume is uploaded."; return; }
+    const blob = await r.blob(), fn = ((r.headers.get("Content-Disposition") || "").match(/filename="([^"]+)"/) || [])[1] || "resume-tailored.docx";
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fn; a.click();
+    st.textContent = r.headers.get("X-Tailor-Where") === "skills" ? "Added under your Skills section. Check how it looks before sending (a copy made from a PDF can differ in layout)." : "Added at the end (no Skills heading found). Check how it looks before sending.";
+    return;
+  }
+  if (b.dataset.act === "match") {
+    if (!OPENM.has(url)) say(ph("one.compare"));
+    if (OPENM.has(url)) { OPENM.delete(url); return render(); }
+    OPENM.add(url); render();
+    try {
+      const r = await fetch("api/match?url=" + encodeURIComponent(url), { cache: "no-store" });
+      if (r.status === 401) return location.reload();
+      MATCH[url] = await r.json();
+    } catch { MATCH[url] = { error: "failed" }; }
+    render();
+    const m = MATCH[url];
+    if (m && !m.error && m.terms) {                         // then the slower AI reading, which fills in underneath
+      m.ai = "busy"; render();
+      try {
+        const r2 = await fetch("api/match/ai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url }) });
+        if (r2.status === 401) return location.reload();
+        m.ai = await r2.json();
+      } catch { m.ai = { error: "failed" }; }
+    }
+    return render();
+  }
+  if (b.dataset.act === "save") {
+    try {
+      TRACK = await post({ url, notes: card.querySelector(".panel textarea").value, follow_up: card.querySelector(".panel input[type=date]").value });
+      OPEN.delete(url);
+    } catch { fail(); }
+    summary(); render();
+  }
+});
+
+function summary() {
+  const c = {};
+  Object.values(TRACK).forEach(t => { if (t.status !== "not_interested") c[t.status] = (c[t.status] || 0) + 1; });
+  const due = Object.entries(TRACK).filter(([, t]) => t.follow_up && closesIn(t.follow_up) <= 0 && ["applied", "interview"].includes(t.status)).length;
+  $("pipeline").innerHTML = STATUSES.filter(s => c[s]).map(s => `<a href="#" class="plink" data-st="${s}" title="Show only ${s}">${cap(s)} <b>${c[s]}</b></a>`).join("") +
+    (due ? `<span style="color:var(--warn)">Follow-ups due <b>${due}</b></span>` : "");
+}
+
+Promise.all([
+  fetch("jobs.json", { cache: "no-store" }).then(r => { if (r.status === 401) { location.reload(); return new Promise(() => {}); } return r.json(); }),
+  fetch("api/track", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch("api/me", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch("api/prefs", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null),
+  visitStart(),
+]).then(([d, track, me, pf, since]) => {
+  if (me) {
+    ME = me; $("me").textContent = me.display || me.user; $("me").title = me.user;
+    $("admintab").hidden = me.role !== "admin";
+    if (location.hash === "#admin" && me.role === "admin") showView("admin");
+    const g = (me.flavor && me.flavor.greeting) || "";          // empty text shows nothing
+    PHRASES.then(() => say(g || ph("boot"), { think: false }));   // typed as soon as the phrases are in: the pill itself is already on screen
+  }
+  if (pf) { PREFS = pf.prefs; MAIL = { ready: pf.mail_ready, from: pf.mail_from }; MAILOWN = pf.mail_own || { configured: false }; }
+  SINCE = since || "";
+  $("mode").value = PREFS.mode; $("union").checked = !!PREFS.union_only;
+  DATA = d;
+  if (track) { TRACK = track; CAN_SAVE = true; }
+  const live = d.jobs.filter(j => !j.closed);
+  const sources = [...new Set(live.map(j => j.source))].sort();
+  const liveSet = new Set(sources), gmap = {};
+  const rk = g => { const i = (d.group_order || []).indexOf(g); return i < 0 ? 99 : i; };
+  [...(d.sources || [])].sort((a, b) => rk(a.group) - rk(b.group)).filter(s => liveSet.has(s.name)).forEach(s => (gmap[s.group] = gmap[s.group] || []).push(s));
+  (d.sources || []).forEach(s => { GROUP_OF[s.name] = s.group; });
+  $("src").innerHTML += Object.entries(gmap).map(([g, list]) => `<optgroup label="${esc(g)}"><option value="group:${esc(g)}">All ${esc(g)}</option>${list.map(s => `<option value="${esc(s.name)}">${esc(s.label)}</option>`).join("")}</optgroup>`).join("");
+  $("sub").textContent = `Updated ${new Date(d.updated).toLocaleString()} · ${live.length} postings across ${sources.length} employers`;
+  if (d.errors && d.errors.length) $("warn").innerHTML = `<div class="warn">Some sources failed on the last run:<br>${d.errors.map(esc).join("<br>")}</div>`;
+  renderManual();
+  buildSettings();
+  if (ME.role === "admin" && ME.user) { $("pnote").textContent = "Your password is managed in Portainer (the JM_PASS variable on the stack)."; $("pcur").disabled = $("pnew").disabled = $("pbtn").disabled = true; }
+  restoreHome().then(() => { summary(); render(); });
+}).catch(() => { $("sub").textContent = "Could not load jobs.json"; });
+
+$("logout").addEventListener("click", async e => { e.preventDefault(); await fetch("logout", { method: "POST" }); location.reload(); });
+["q", "src", "status", "sort", "mode", "union", "radius", "newonly", "hideapplied"].forEach(id => $(id).addEventListener("input", () => {
+  if (id === "radius") saveHome();
+  PAGE = 0;
+  chatInput(id);
+  if (id === "hideapplied") store.set(hk("qq_hideapplied"), $("hideapplied").checked ? "1" : "");
+  if (id === "mode") renderManual();
+  render();
+  if (id === "mode" && $("mode").value === "keywords" && !PREFS.keywords.length) $("kwadd").focus();
+}));
+
+// ---------- Theme, filter panel ----------
+const effTheme = () => document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+function paintTheme() {                // emoji only; the button shows what a click will switch TO
+  const dark = effTheme() === "dark", b = $("theme");
+  b.textContent = dark ? "☀️" : "🌙"; b.title = b.ariaLabel = dark ? "Switch to light mode" : "Switch to dark mode";
+}
+$("workbtn").addEventListener("click", () => { if (window.QQWork) QQWork.toggle(); });
+$("theme").addEventListener("click", () => { const t = effTheme() === "dark" ? "light" : "dark"; say(ph(t === "dark" ? "one.dark" : "one.light"), { think: false }); document.documentElement.dataset.theme = t; store.set("qq_theme", t); paintTheme(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintTheme);
+function setFilters(open) { $("fpanel").hidden = !open; $("ftoggle").setAttribute("aria-expanded", open); $("ftoggle").classList.toggle("on", open); store.set("qq_filters_open", open ? "1" : ""); }
+$("sconsole").addEventListener("change", () => {
+  CON.on = $("sconsole").checked; store.set("qq_console", CON.on ? "" : "off");
+  if (CON.on) say(ph("one.chatter_on"), { think: false }); else $("console").hidden = true;
+});
+$("ftoggle").addEventListener("click", () => { if ($("fpanel").hidden) say(ph("one.filter_drawer"), { think: false }); setFilters($("fpanel").hidden); });
+$("fclear").addEventListener("click", () => {                 // resets what's inside the panel (not the category, employer or checkboxes)
+  $("status").value = ""; $("sort").value = "new"; $("radius").value = ""; $("newonly").checked = false;
+  PAGE = 0; saveHome(); render();
+});
+$("manualsec").addEventListener("toggle", () => store.set("qq_manual_open", $("manualsec").open ? "1" : ""));
+// ---------- Visit marker, distance, settings ----------
+async function visitStart() {
+  try {                                    // once per browser session, so reloads don't reset "new since last visit"
+    if (sessionStorage.getItem("qq_since_set")) return sessionStorage.getItem("qq_since") || "";
+    const r = await fetch("api/visit", { method: "POST" });
+    if (!r.ok) return "";
+    const since = (await r.json()).since || "";
+    sessionStorage.setItem("qq_since", since); sessionStorage.setItem("qq_since_set", "1");
+    return since;
+  } catch { return ""; }
+}
+const store = {
+  get: k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } },
+  set: (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch {} },
+};
+(() => {                      // donut easter egg: 5 quick clicks = a warning; 10 = the console gets "hacked" and plays a sound
+  let n = 0, timer, busy = false;
+  const mark = document.querySelector(".top .mark");
+  mark.addEventListener("mousedown", e => e.preventDefault());      // rapid clicks never start a text selection
+  mark.addEventListener("dblclick", e => e.preventDefault());
+  mark.addEventListener("click", () => {
+    if (busy) return;
+    clearTimeout(timer); timer = setTimeout(() => { n = 0; }, 2000);
+    n++;
+    if (n === 5) say(ph("egg.warning"), { think: false, force: true });
+    if (n >= 10) { n = 0; clearTimeout(timer); hack(); }
+  });
+  async function hack() {
+    busy = true; CON.hold = true;                                   // the normal chatter stays quiet meanwhile
+    const sound = fetch("egg.mp3", { cache: "no-cache" }).then(r => r.ok ? r.blob() : null).catch(() => null);      // fetched while the "hack" runs
+    while (CON.busy) await nap(80);                                 // let any line already being typed finish
+    const box = $("console"), out = $("ctext"), cur = box.querySelector(".ccursor");
+    box.hidden = false; box.classList.add("hacked"); cur.classList.add("typing");
+    const steps = (PH["egg.hack"] || []).map(l => /\s*\|bar\s*$/.test(l) ? [l.replace(/\s*\|bar\s*$/, ""), 1] : [l, 0]);
+    for (const [text, bar] of steps) {
+      if (CON.calm) { out.textContent = text; await nap(500); continue; }
+      out.textContent = "";
+      for (const ch of text) { out.textContent += ch; await nap(rand(8, 22)); }
+      if (bar) for (let k = 0; k <= 10; k++) { out.textContent = `${text}  [${"█".repeat(k)}${"░".repeat(10 - k)}] ${k * 10}%`; await nap(rand(40, 110)); }
+      await nap(rand(200, 420));
+    }
+    cur.classList.remove("typing");
+    const blob = await sound;
+    const restore = (msg) => { wrap.remove(); audio && audio.pause(); box.classList.remove("hacked"); CON.hold = false; busy = false; out.textContent = ""; say(msg, { force: true, think: false }); };
+    const wrap = document.createElement("div"); wrap.className = "hackvid hv-mini";
+    wrap.innerHTML = `<div class="hv-bar"><span class="hv-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>BROADCAST OVERRIDE</span><button type="button">■ restore protocols</button></div>`;
+    box.after(wrap);
+    wrap.querySelector("button").addEventListener("click", () => restore(ph("egg.restored")));
+    if (!blob) { out.textContent = ph("egg.missing"); wrap.querySelector(".hv-wave").style.display = "none"; return; }
+    var audio = new Audio(URL.createObjectURL(blob));
+    audio.addEventListener("ended", () => restore(ph("egg.received")));
+    out.textContent = ph("egg.ready");
+    audio.play().catch(() => {                                      // a browser may refuse sound it wasn't asked for: one click fixes that
+      const b = document.createElement("button"); b.type = "button"; b.textContent = "▶ play"; wrap.querySelector(".hv-bar").insertBefore(b, wrap.querySelector("button"));
+      b.addEventListener("click", () => { audio.play(); b.remove(); });
+    });
+  }
+})();
+
+// ---------- Console: scripted flavor text. It only pretends to be an AI: a thinking spinner, then a line typed out, then a blinking cursor.
+const CON = { on: store.get("qq_console") !== "off", q: [], busy: false, idleAt: Date.now(), calm: matchMedia("(prefers-reduced-motion: reduce)").matches };
+if (!CON.on) $("console").hidden = true;                          // visible by default; only the Settings switch turns it off
+const rand = (a, b) => a + Math.random() * (b - a), pick = arr => arr[Math.floor(Math.random() * arr.length)], nap = ms => new Promise(r => setTimeout(r, ms));
+const THINK_MIN = 1000, THINK_MAX = 1500;     // the "thinking…" line stays up for a random time in this range (ms) before the real phrase is typed
+const SPIN = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+let PH = {};            // every phrase the console says lives in phrases.json (edit it with tools/phrases.py); nothing is said until it has loaded
+const PHRASES = fetch("phrases.json", { cache: "no-store" }).then(r => r.ok ? r.json() : {}).then(j => { PH = j || {}; }).catch(() => {});
+const ph = (key, vars = {}) => { const a = PH[key]; return a && a.length ? pick(a).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m)) : ""; };
+function say(text, opts = {}) {
+  if ((!CON.on && !opts.force) || CON.hold || !text) return;      // force: easter-egg lines show even with the chatter switched off
+  CON.idleAt = Date.now();
+  if (CON.q.length > 1) CON.q.length = 1;                         // never build a backlog; the newest line wins
+  CON.q.push({ text, think: opts.think !== false, force: !!opts.force });
+  if (!CON.busy) conRun();
+}
+async function conRun() {
+  CON.busy = true;
+  const box = $("console"), out = $("ctext"), cur = box.querySelector(".ccursor");
+  while (CON.q.length && (CON.on || CON.q[0].force)) {
+    const m = CON.q.shift();
+    box.hidden = false;
+    if (CON.calm) { out.textContent = m.text; continue; }
+    cur.classList.add("typing");
+    if (m.think) {                                                // a short "thinking" beat first, like a chat bot
+      const word = ph("think") || "thinking", until = Date.now() + rand(THINK_MIN, THINK_MAX); let i = 0;
+      while (Date.now() < until) { out.textContent = SPIN[i++ % SPIN.length] + " " + word + "…"; await nap(80); }
+    }
+    out.textContent = "";
+    for (const ch of m.text) {                                    // typed with a human rhythm: quick mid-word, a beat after punctuation
+      if (CON.q.length) { out.textContent = m.text; break; }      // something newer is waiting: finish this line at once
+      out.textContent += ch;
+      await nap(/[.,!?…:;]/.test(ch) ? rand(130, 250) : rand(16, 52));
+    }
+    cur.classList.remove("typing");
+    if (CON.q.length) await nap(350);
+  }
+  CON.busy = false;
+  if (!CON.on) setTimeout(() => { if (!CON.busy && !CON.hold) box.hidden = true; }, 3500);
+}
+const chat = (kind, key) => say(ph(kind + "." + key));
+function chatInput(id) {
+  const v = $(id), t = v && v.type === "checkbox" ? v.checked : v && v.value, onoff = k => ph(`input.${k}_${t ? "on" : "off"}`);
+  const lines = {
+    mode: ph("input.mode", { mode: v.selectedOptions && v.selectedOptions[0] ? v.selectedOptions[0].textContent.toLowerCase() : "that" }), src: ph("input.src"), sort: ph("input.sort"),
+    status: onoff("status"), radius: onoff("radius"), hideapplied: onoff("hideapplied"), union: onoff("union"), newonly: onoff("newonly"),
+  };
+  if (id === "q") { clearTimeout(chatInput.t); if (t) chatInput.t = setTimeout(() => say(ph("input.search", { q: String(t).slice(0, 28) })), 1300); return; }
+  if (lines[id]) say(lines[id], { think: false });
+}
+setInterval(() => { if (CON.on && !CON.busy && Date.now() - CON.idleAt > 110000 && Math.random() < 0.5) say(ph("idle")); }, 20000);
+paintTheme(); setFilters(!!store.get("qq_filters_open")); $("manualsec").open = !!store.get("qq_manual_open");
+async function setHome(raw) {
+  const code = (raw || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 3);
+  HOME = null;
+  if (!code) { $("homeinfo").textContent = ""; return; }
+  if (!/^[KLMNP]\d[A-Z]$/.test(code)) { $("homeinfo").textContent = "That doesn't look like an Ontario postal prefix (for example L3Y)."; return; }
+  if (!FSA) { try { FSA = await (await fetch("/fsa.json")).json(); } catch { $("homeinfo").textContent = "Couldn't load the postal-area list."; return; } }
+  const v = FSA[code];
+  if (!v) { $("homeinfo").textContent = `${code} isn't in the Ontario list.`; return; }
+  HOME = { code, lat: v[0], lon: v[1], label: v[2] };
+  $("homeinfo").textContent = "";
+}
+const hk = name => `${name}:${ME.user}`;       // per person, so people sharing a computer don't see each other's starting point
+function saveHome() { store.set(hk("qq_home"), HOME ? HOME.code : ""); store.set(hk("qq_radius"), $("radius").value); }
+async function restoreHome() {
+  $("hideapplied").checked = !!store.get(hk("qq_hideapplied"));
+  $("radius").value = store.get(hk("qq_radius"));
+  const saved = store.get(hk("qq_home"));
+  if (saved) { $("home").value = saved; await setHome(saved); }
+}
+$("home").addEventListener("change", async () => { await setHome($("home").value); saveHome(); render(); });
+$("home").addEventListener("keydown", e => { if (e.key === "Enter") $("home").blur(); });
+
+function buildTree() {
+  const groups = [], idx = {};
+  const rank = g => { const i = (DATA.group_order || []).indexOf(g); return i < 0 ? 99 : i; };
+  [...(DATA.sources || [])].sort((a, b) => rank(a.group) - rank(b.group)).forEach(s => { if (!(s.group in idx)) { idx[s.group] = groups.length; groups.push({ name: s.group, items: [] }); } groups[idx[s.group]].items.push(s); });
+  const chosen = new Set(effEmployers());
+  $("semp").innerHTML = groups.map(g => `<details class="tree"${g.items.some(s => chosen.has(s.name)) ? " open" : ""}>
+      <summary><label><input type="checkbox" class="grp" aria-label="Select everything in ${esc(g.name)}"> <b>${esc(g.name)}</b></label> <span class="km grpcount"></span></summary>
+      <div class="kids">${g.items.map(s => `<label><input type="checkbox" class="emp" value="${esc(s.name)}"${chosen.has(s.name) ? " checked" : ""}> ${esc(s.label)}</label>`).join("")}</div></details>`).join("");
+  syncTree();
+}
+function syncTree() {
+  let total = 0, on = 0;
+  document.querySelectorAll("#semp details.tree").forEach(d => {
+    const kids = [...d.querySelectorAll("input.emp")], n = kids.filter(k => k.checked).length, g = d.querySelector("input.grp");
+    g.checked = n === kids.length; g.indeterminate = n > 0 && n < kids.length;
+    d.querySelector(".grpcount").textContent = n ? `${n} of ${kids.length}` : `${kids.length}`;
+    total += kids.length; on += n;
+  });
+  $("sempsum").textContent = on === 0 || on === total ? "· all employers" : `· ${on} of ${total} selected`;
+}
+function pickedEmployers() {                                  // ticking everything is saved as "no restriction"
+  const all = [...document.querySelectorAll("#semp input.emp")], on = all.filter(x => x.checked).map(x => x.value);
+  return on.length === all.length ? [] : on;
+}
+$("semp").addEventListener("change", e => {
+  if (e.target.classList.contains("grp")) e.target.closest("details").querySelectorAll("input.emp").forEach(k => { k.checked = e.target.checked; });
+  syncTree();
+});
+$("texp").addEventListener("click", e => { e.preventDefault(); document.querySelectorAll("#semp details").forEach(d => { d.open = true; }); });
+$("tcol").addEventListener("click", e => { e.preventDefault(); document.querySelectorAll("#semp details").forEach(d => { d.open = false; }); });
+$("tclr").addEventListener("click", e => { e.preventDefault(); document.querySelectorAll("#semp input").forEach(x => { x.checked = false; }); syncTree(); });
+function words(v) { return v.split(/[,\n]/).map(x => x.trim()).filter(Boolean); }
+function buildSettings() {
+  buildTree();
+  document.querySelectorAll("input[name=smode]").forEach(r => r.checked = r.value === PREFS.mode);
+  $("sname").value = PREFS.name || ME.display || ""; $("sconsole").checked = CON.on;
+  $("sex").value = PREFS.exclude.join(", ");
+  $("sunion").checked = PREFS.union_only;
+  $("salerts").checked = PREFS.alerts; $("sdigest").checked = PREFS.digest;
+  $("sownerwrap").hidden = ME.role !== "admin"; $("sowner").checked = PREFS.owner_email !== false;
+  renderMail();
+}
+const GUESS = { "gmail.com": "gmail", "googlemail.com": "gmail", "icloud.com": "icloud", "me.com": "icloud", "mac.com": "icloud",
+  "outlook.com": "outlook", "hotmail.com": "outlook", "live.com": "outlook", "msn.com": "outlook", "outlook.ca": "outlook", "hotmail.ca": "outlook" };
+function mailStat(t, cls) { $("smailstat").textContent = t || ""; $("smailstat").className = cls || ""; }
+function renderMail() {
+  const own = MAILOWN, byName = !!ME.email_login;          // an email-address login IS the sending address: nothing to type
+  $("semailwrap").hidden = byName;
+  $("semaillab").textContent = "Your email address (you can sign in with it too)";
+  $("semail").value = byName ? ME.user : own.configured ? own.address : (PREFS.email || $("semail").value);
+  if (own.configured) { $("sprov").value = own.provider; if (own.provider === "other") { $("shost").value = own.host; $("sport").value = String(own.port); } }
+  else if (GUESS[($("semail").value.split("@")[1] || "").toLowerCase()]) $("sprov").value = GUESS[$("semail").value.split("@")[1].toLowerCase()];
+  $("sother").hidden = $("sprov").value !== "other"; $("smshint").hidden = !$("sprov").value.startsWith("microsoft") && $("sprov").value !== "outlook";
+  $("sapp").placeholder = own.configured ? "Saved. Type a new one only to replace it" : "The app password from your provider";
+  $("smailremove").hidden = !own.configured; $("smailtest").hidden = !own.configured;
+  const usable = own.configured || MAIL.ready;
+  $("salerts").disabled = $("sdigest").disabled = !usable;
+  let note = own.configured ? `Alerts are sent from ${own.address} to itself.` : byName ? `Alerts are sent from ${ME.user} (your sign-in) to itself. Add an app password for it below.` : "Add your email address and an app password below. Alerts are sent from your own account to yourself, so nobody else's address is involved.";
+  if (own.configured && own.last_error) note += ` The last attempt failed (${own.last_error.replace(/_/g, " ")}). Check your app password below.`;
+  else if (own.configured && own.last_ok) note += ` Last successful send: ${stamp(own.last_ok + "Z")}`;
+  $("smailnote").textContent = note;
+}
+$("sprov").addEventListener("change", () => { $("sother").hidden = $("sprov").value !== "other"; $("smshint").hidden = !$("sprov").value.startsWith("microsoft") && $("sprov").value !== "outlook"; });
+$("semail").addEventListener("input", () => { const g = GUESS[($("semail").value.split("@")[1] || "").toLowerCase()]; if (g && !MAILOWN.configured) { $("sprov").value = g; $("sprov").dispatchEvent(new Event("change")); } });
+const MAIL_ERR = { email_taken: "Another account already uses that address.", bad_address: "That email address doesn't look right.", bad_password: "Enter your app password.", bad_server: "Check the server name and port.", bad_provider: "Pick a mail provider." };
+async function mailCall(path, body) {
+  const r = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+  if (r.status === 401) { location.reload(); return new Promise(() => {}); }
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw Object.assign(new Error(MAIL_ERR[j.error] || j.message || "Something went wrong."), { code: j.error });
+  return j;
+}
+$("smailsave").addEventListener("click", async () => {
+  mailStat("Saving…");
+  try {
+    const j = await mailCall("api/mail", { provider: $("sprov").value, email: $("semail").value.trim(), password: $("sapp").value, host: $("shost").value.trim(), port: Number($("sport").value) });
+    MAILOWN = j.mail_own; PREFS = j.prefs; $("sapp").value = ""; renderMail(); mailStat("Saved. Now press “Send me a test email”.", "good");
+  } catch (e) { mailStat(e.message, "bad"); }
+});
+$("smailtest").addEventListener("click", async () => {
+  mailStat("Sending a test… this can take a few seconds.");
+  try { await mailCall("api/mail/test"); MAILOWN.last_error = ""; MAILOWN.last_ok = new Date().toISOString().slice(0, 19); renderMail(); mailStat("Sent! Check your inbox (and spam folder the first time).", "good"); }
+  catch (e) { mailStat(e.message, "bad"); }
+});
+$("smailremove").addEventListener("click", async () => {
+  if (!confirm("Remove your saved app password? Email alerts will stop until you add one again.")) return;
+  try { const j = await mailCall("api/mail/remove"); MAILOWN = j.mail_own; PREFS = j.prefs; $("salerts").checked = PREFS.alerts; $("sdigest").checked = PREFS.digest; renderMail(); mailStat("Removed."); }
+  catch (e) { mailStat(e.message, "bad"); }
+});
+$("ssave").addEventListener("click", async () => {
+  const mode = (document.querySelector("input[name=smode]:checked") || {}).value || "it";
+  const nm = $("sname").value.trim();
+  const body = { mode, exclude: words($("sex").value), union_only: $("sunion").checked, ...(nm ? { name: nm } : {}),
+    employers: pickedEmployers() };
+  if (!$("salerts").disabled) { body.alerts = $("salerts").checked; body.digest = $("sdigest").checked; }
+  if (ME.role === "admin") body.owner_email = $("sowner").checked;
+  $("sstat").textContent = "Saving…";
+  try {
+    const r = await fetch("api/settings".replace("settings", "prefs"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (r.status === 401) return location.reload();
+    if (r.status === 400) { const e = await r.json().catch(() => ({})); $("sstat").textContent = e.error === "email_required" ? "Save your email settings first." : e.error === "mail_not_set_up" ? "Add and save your app password first." : "Couldn't save that. Check your entries."; return; }
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json(); PREFS = j.prefs;
+    if (PREFS.name) { ME.display = PREFS.name; $("me").textContent = PREFS.name; }
+    $("mode").value = PREFS.mode; $("union").checked = PREFS.union_only; buildSettings(); render();
+    $("sstat").textContent = "Saved " + new Date().toLocaleTimeString([], { timeStyle: "short" });
+    say(ph("one.saved"));
+  } catch { $("sstat").textContent = "Couldn't save. Try again."; }
+});
+
+// ---------- Admin: people ----------
+const PW_CHARS = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789";
+function genPassword() { const a = new Uint32Array(14); crypto.getRandomValues(a); return [...a].map(n => PW_CHARS[n % PW_CHARS.length]).join(""); }
+const ADMIN_ERR = { bad_display: "Use letters, spaces, dot, apostrophe or dash (up to 60).", exists: "That email already has an account.", bad_name: "Enter the person's email address.",
+  weak_password: "Passwords need at least 8 characters.", managed_in_portainer: "That login is managed in Portainer.", not_found: "No such person.",
+  cannot_remove_self: "You can't remove yourself.", cannot_remove_admin: "Admins can't be removed here.", forbidden: "Not allowed." };
+async function adminCall(path, body) {
+  const r = await fetch(path, { method: body ? "POST" : "GET", headers: { "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+  if (r.status === 401) { location.reload(); return new Promise(() => {}); }
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(ADMIN_ERR[j.error] || "Something went wrong.");
+  return j;
+}
+function renderUsers(list) {
+  flavorKeys(list);
+  $("utable").innerHTML = list.users.map(u => `<tr><td><b>${esc(u.display || u.name)}</b>${u.role === "admin" ? '<span class="badge admin">ADMIN</span>' : ""}${u.name === ME.user ? ' <span class="km">(you)</span>' : ""}<div class="km">${esc(u.name)}</div></td>
+    <td class="act"><button data-uact="display" data-name="${esc(u.name)}" data-cur="${esc(u.display || "")}">Set name</button>${u.managed === "portainer" ? '<span class="km"> login managed in Portainer</span>' :
+      `<button data-uact="reset" data-name="${esc(u.name)}">Reset password</button><button class="danger" data-uact="remove" data-name="${esc(u.name)}">Remove</button>`}</td></tr>`).join("");
+}
+let FLAVOR = {};
+function flavorKeys(list) {                  // keeps the current choice if that person still exists
+  const keep = $("fkey").value;
+  $("fkey").innerHTML = `<option value="_default">Everyone (default)</option>` +
+    list.users.map(u => `<option value="${esc(u.name)}">${esc(u.display || u.name)}</option>`).join("");
+  if ([...$("fkey").options].some(o => o.value === keep)) $("fkey").value = keep;
+  showFlavor();
+}
+function showFlavor() {
+  const k = $("fkey").value, f = FLAVOR[k] || {};
+  $("fgreet").value = f.greeting || ""; $("fstat").textContent = "";
+}
+function renderReports(list) {
+  const reports = list.reports || [];
+  $("rempty").hidden = reports.length > 0;
+  $("rtable").innerHTML = reports.map(r => `<tr><td><b>${esc(r.host)}</b><br><span class="km">reported by ${esc(r.reported_by)} · last seen ${esc((r.last_seen || "").slice(0, 10))}</span></td>
+    <td class="act"><button data-rview="${esc(r.host)}">View fields</button><button class="danger" data-rdismiss="${esc(r.host)}">Dismiss</button></td></tr>`).join("");
+}
+async function adminLoad() {
+  try {
+    FLAVOR = await adminCall("api/admin/flavor");
+    renderUsers(await adminCall("api/admin/users"));
+    renderReports(await adminCall("api/admin/field-reports"));
+  } catch (e) { $("astat").textContent = e.message; }
+}
+$("rtable").addEventListener("click", async e => {
+  const v = e.target.closest("button[data-rview]"), d = e.target.closest("button[data-rdismiss]");
+  if (v) {
+    try {
+      const r = (await adminCall("api/admin/field-reports")).reports.find(x => x.host === v.dataset.rview);
+      if (r) { await navigator.clipboard.writeText(r.url + "\n" + r.dump).catch(() => {}); alert(r.url + "\n\n" + r.dump); }
+    } catch (err) { $("astat").textContent = err.message; }
+  } else if (d) {
+    try { renderReports(await adminCall("api/admin/field-reports/dismiss", { host: d.dataset.rdismiss })); }
+    catch (err) { $("astat").textContent = err.message; }
+  }
+});
+$("fkey").addEventListener("change", showFlavor);
+$("fsave").addEventListener("click", async () => {
+  const key = $("fkey").value, body = { key, greeting: $("fgreet").value };
+  $("fstat").textContent = "Saving…";
+  try { FLAVOR = await adminCall("api/admin/flavor", body); $("fstat").textContent = "Saved. They'll see it next time the page loads."; }
+  catch (e) { $("fstat").textContent = e.message; }
+});
+$("agen").addEventListener("click", () => { $("apw").value = genPassword(); });
+$("aadd").addEventListener("click", async () => {
+  const name = $("anew").value.trim(), password = $("apw").value;
+  $("astat").textContent = "Adding…";
+  try {
+    renderUsers(await adminCall("api/admin/users", { name, password }));
+    $("astat").innerHTML = `Added <b>${esc(name.toLowerCase())}</b>. Temporary password: <b>${esc(password)}</b> (share it privately).`;
+    $("anew").value = ""; $("apw").value = "";
+  } catch (e) { $("astat").textContent = e.message; }
+});
+$("utable").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-uact]"); if (!b) return;
+  const name = b.dataset.name;
+  try {
+    if (b.dataset.uact === "display") {
+      const v = prompt(`Full name to show for ${name}:`, b.dataset.cur || "");
+      if (v === null || !v.trim()) return;
+      renderUsers(await adminCall("api/admin/users/display", { name, display: v.trim() }));
+      $("astat").textContent = `Name for ${name} saved.`;
+    } else if (b.dataset.uact === "reset") {
+      let pw = prompt(`New password for ${name} (at least 8 characters). Leave empty to generate one.`);
+      if (pw === null) return;
+      pw = pw.trim() || genPassword();
+      renderUsers(await adminCall("api/admin/users/password", { name, password: pw }));
+      $("astat").innerHTML = `Password for <b>${esc(name)}</b> is now <b>${esc(pw)}</b> (share it privately). They've been signed out everywhere.`;
+    } else {
+      if (!confirm(`Remove ${name}? They'll be signed out immediately.`)) return;
+      const purge = confirm(`Also permanently delete ${name}'s saved resume, cover letter, tracker and settings?\n\nOK = delete everything\nCancel = keep it (it comes back if you add them again)`);
+      renderUsers(await adminCall("api/admin/users/remove", { name, purge }));
+      $("astat").textContent = `Removed ${name}${purge ? " and deleted their data" : " (their data was kept)"}.`;
+    }
+  } catch (err) { $("astat").textContent = err.message; }
+});
+
+// ---------- My password ----------
+$("pbtn").addEventListener("click", async () => {
+  $("pstat").textContent = "Saving…";
+  try {
+    await adminCall("api/password", { current: $("pcur").value, new: $("pnew").value });
+    $("pcur").value = $("pnew").value = ""; $("pstat").textContent = "Password changed. Your other devices have been signed out.";
+  } catch (e) { $("pstat").textContent = e.message === "Something went wrong." ? "That current password isn't right." : e.message; }
+});
+
+// ---------- My documents (uploaded files) ----------
+let DOCS = null, CUR = "resume";
+const DOCFILE = { resume: "resume", cover: "cover-letter" };
+const FTYPES = { pdf: "PDF", docx: "Word (.docx)", doc: "Word 97-2003 (.doc)", rtf: "Rich Text (.rtf)", odt: "OpenDocument (.odt)", txt: "Plain text (.txt)" };
+const FEXT = ["pdf", "docx", "doc", "odt", "rtf", "txt"], FMAX = 5_000_000;
+
+function showView(v) {
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.view === v));
+  $("view-jobs").hidden = v !== "jobs"; $("view-docs").hidden = v !== "docs"; $("view-settings").hidden = v !== "settings"; $("view-admin").hidden = v !== "admin";
+  history.replaceState(null, "", v === "jobs" ? location.pathname + location.search : "#" + v);
+  chat("view", v);
+  if (v === "docs" && !DOCS) { loadDocs(); ploadProfile(); }
+  if (v === "admin") adminLoad();
+}
+document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+
+const stamp = iso => iso ? new Date(iso).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "";
+function fmsg(t, bad) { $("fstat2").textContent = t || ""; $("fstat2").classList.toggle("bad", !!bad); }
+function human(n) { return n < 1024 ? n + " B" : n < 1048576 ? Math.round(n / 1024) + " KB" : (n / 1048576).toFixed(1) + " MB"; }
+
+async function loadDocs() {
+  try {
+    const r = await fetch("api/docs", { cache: "no-store" });
+    if (r.status === 401) return location.reload();
+    DOCS = await r.json(); renderFile();
+  } catch { fmsg("Couldn't load your documents.", true); }
+}
+function renderFile() {
+  if (!DOCS) return;
+  const f = DOCS[CUR].file;
+  $("fempty").hidden = !!f; $("finfo").hidden = !f; $("fnote").hidden = !f;
+  const conv = $("fconv");
+  if (f) {
+    $("fname").textContent = f.name; $("fmeta").textContent = `${FTYPES[f.ext] || f.ext} · ${human(f.size)} · uploaded ${stamp(f.uploaded)}`;
+    conv.hidden = f.ext === "txt";
+  }
+  if (f && f.note === "no_text") fmsg(CUR === "resume" ? "This file has no readable text (it may be a scan), so the Keyword Finder can't use it. Upload a text-based PDF or Word file for that." : "", CUR === "resume");
+  else if (f && f.note !== "ok") fmsg("Uploaded, but its text couldn't be read: " + f.note, true);
+  else fmsg("");
+}
+async function uploadFile(file) {
+  if (!file || !DOCS) return;
+  const ext = (file.name.split(".").pop() || "").toLowerCase();
+  if (!FEXT.includes(ext)) return fmsg("That file type isn't supported. Use PDF, Word, OpenDocument, RTF or text.", true);
+  if (file.size > FMAX) return fmsg(`That file is ${human(file.size)}. The limit is 5 MB.`, true);
+  if (file.size === 0) return fmsg("That file is empty.", true);
+  const name = CUR; fmsg("Uploading…");
+  try {
+    const r = await fetch(`api/docs/file?name=${name}&filename=${encodeURIComponent(file.name)}`, { method: "POST", body: file });
+    if (r.status === 401) return location.reload();
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) return fmsg(r.status === 415 ? "That doesn't look like a real PDF or document, so it wasn't saved." : r.status === 413 ? "That file is too large." : "Couldn't upload that file.", true);
+    DOCS[name].file = j.file;
+    if (CUR === name) { renderFile(); if (j.file.note === "ok") fmsg("Uploaded."); }
+  } catch { fmsg("Couldn't upload that file. Try again.", true); }
+}
+$("fbrowse").addEventListener("click", () => $("fpick").click());
+$("freplace").addEventListener("click", () => $("fpick").click());
+$("fpick").addEventListener("change", e => { const f = e.target.files[0]; e.target.value = ""; uploadFile(f); });
+const box = $("filebox");
+["dragenter", "dragover"].forEach(ev => box.addEventListener(ev, e => { e.preventDefault(); box.classList.add("over"); }));
+["dragleave", "drop"].forEach(ev => box.addEventListener(ev, e => { e.preventDefault(); box.classList.remove("over"); }));
+box.addEventListener("drop", e => uploadFile(e.dataTransfer.files[0]));
+$("fdown").addEventListener("click", () => { location.href = "api/docs/file?name=" + CUR; });
+$("fdel").addEventListener("click", async () => {
+  if (!confirm("Remove your uploaded file?")) return;
+  const r = await fetch("api/docs/file/delete", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: CUR }) });
+  if (r.ok) { DOCS[CUR].file = null; renderFile(); } else fmsg("Couldn't remove it.", true);
+});
+$("fconv").addEventListener("click", async () => {
+  fmsg("Getting the text…");
+  try {
+    const r = await fetch("api/docs/convert", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: CUR, to: "txt" }) });
+    if (r.status === 401) return location.reload();
+    if (!r.ok) { const j = await r.json().catch(() => ({})); return fmsg("Couldn't read the text: " + (j.message || "something went wrong"), true); }
+    const blob = await r.blob(), cd = r.headers.get("Content-Disposition") || "", fn = (cd.match(/filename="([^"]+)"/) || [])[1] || `${DOCFILE[CUR]}.txt`;
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fn; document.body.appendChild(a); a.click(); a.remove();
+    fmsg(`Your text copy (${fn}) should start downloading now. Your original is unchanged.`);
+  } catch { fmsg("Couldn't get the text.", true); }
+});
+
+// ---------- Autofill profile ----------
+const PSC = [["first","First name"],["last","Last name"],["email","Email"],["phone","Phone"],["address","Street address"],["city","City"],["province","Province"],["postal","Postal code"],["country","Country"],["linkedin","LinkedIn URL"],["website","Website"],["salary","Salary expectation (e.g. $55/hr or 90000/yr)"],["availability","Available to start (e.g. 2 weeks, or 2026-11-02)"],["languages","Languages (written/spoken)"],["work_locations","Preferred work locations (comma separated, e.g. Newmarket, Richmond Hill)"],["shifts","Preferred shifts (e.g. Days, Evenings)"],["heard_about","How you hear about postings (e.g. company website)"]];
+const PYN = [["work_auth","Legally allowed to work in Canada?"],["sponsorship","Need visa sponsorship?"],["legal_age","Of legal working age?"],["travel_intl","Able to travel internationally?"],["relocate","Willing to relocate?"]];
+const PLISTS = { jobs: ["Work history", ["title","Job title"],["employer","Employer"],["location","City, Province"],["start","Start (e.g. Mar 2018)"],["end","End (e.g. Dec 2023, or Present)"],["current","Still working here?"],["type","Employment type"],["desc","What you did"]],
+                 education: ["Education", ["school","School"],["credential","Credential (e.g. Diploma in Computer Systems)"],["field","Field of study"],["level","Level"],["start","Start year"],["year","Graduation year"],["graduated","Graduated?"]],
+                 certifications: ["Certifications and training", ["name","Certification or course"],["issuer","Issued by"],["year","Year"]],
+                 references: ["References", ["name","Name"],["title","Title"],["phone","Phone"],["email","Email"]] };
+const PSEL = { current: ["", "yes"], graduated: ["", "yes", "no"], level: ["", "High School", "College Diploma", "Bachelor's Degree", "Master's Degree", "PhD"],
+               type: ["", "Full time", "Part time", "Contract", "Casual", "Seasonal", "Internship"] };
+let PROF = null;
+function pcollect() {
+  const p = { skills: $("pskills") ? $("pskills").value.split(",").map(x => x.trim()).filter(Boolean) : [], summary: $("psummary") ? $("psummary").value : "" };
+  PSC.forEach(([k]) => p[k] = $("p_" + k).value);
+  PYN.forEach(([k]) => p[k] = $("p_" + k).value);
+  Object.keys(PLISTS).forEach(l => p[l] = [...document.querySelectorAll(`.pl[data-list=${l}]`)].map(g => Object.fromEntries([...g.querySelectorAll("[data-k]")].map(i => [i.dataset.k, i.value]))));
+  return p;
+}
+function prender() {
+  const p = PROF || {};
+  $("pfields").innerHTML = PSC.map(([k, l]) => `<label class="field">${l}<input id="p_${k}" value="${esc(p[k] || "")}"></label>`).join("") +
+    PYN.map(([k, l]) => `<label class="field">${l}<select id="p_${k}"><option value="">(don't answer)</option><option value="yes"${p[k]==="yes"?" selected":""}>Yes</option><option value="no"${p[k]==="no"?" selected":""}>No</option></select></label>`).join("");
+  $("plists").innerHTML = `<label class="field">Summary<textarea id="psummary" style="min-height:9rem">${esc(p.summary || "")}</textarea></label>
+    <label class="field">Skills (comma separated)<textarea id="pskills" style="min-height:7rem">${esc((p.skills || []).join(", "))}</textarea></label>` +
+    Object.entries(PLISTS).map(([l, [title, ...cols]]) => `<h4 style="margin:12px 0 2px">${title}</h4>` +
+      (p[l] || []).map(row => plrow(l, cols, row)).join("") + `<button type="button" data-add="${l}">+ Add</button>`).join("");
+}
+function plrow(l, cols, row) {
+  return `<div class="pl" data-list="${l}">` + cols.map(([k, lab]) => k === "desc"
+    ? `<textarea data-k="${k}" placeholder="${lab}">${esc(row[k] || "")}</textarea>`
+    : PSEL[k] ? `<select data-k="${k}" aria-label="${lab}" title="${lab}">${PSEL[k].map(o => `<option value="${esc(o)}"${(row[k] || "") === o ? " selected" : ""}>${o || lab}</option>`).join("")}</select>`
+    : `<input data-k="${k}" placeholder="${lab}" title="${lab}" value="${esc(row[k] || "")}">`).join("") +
+    `<button type="button" data-del="1">Remove</button></div>`;
+}
+async function ploadProfile() {
+  const r = await fetch("api/profile", { cache: "no-store" });
+  if (r.status === 401) return location.reload();
+  PROF = (await r.json()).profile; prender();
+}
+$("plists").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.del) { PROF = pcollect(); b.closest(".pl").remove(); }
+  else if (b.dataset.add) { PROF = pcollect(); PROF[b.dataset.add].push({}); prender(); }
+});
+async function psend(path, body) {
+  const r = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+  if (r.status === 401) { location.reload(); return new Promise(() => {}); }
+  return r.json();
+}
+$("psave").addEventListener("click", async () => {
+  $("pstat2").textContent = "Saving…";
+  const j = await psend("api/profile", pcollect());
+  PROF = j.profile; $("pstat2").textContent = j.profile ? "Saved. Open this site in the browser with the script to sync it." : "Couldn't save.";
+});
+$("pparse").addEventListener("click", async () => {
+  $("pstat2").textContent = "Reading your resume… (up to a minute with the AI model)";
+  PROF = pcollect();
+  await psend("api/profile", PROF);
+  const j = await psend("api/profile/parse");
+  if (j.error === "no_resume") { $("pstat2").textContent = "Upload your resume above first."; return; }
+  PROF = j.profile; prender(); $("pstat2").textContent = `Filled the blanks${j.model ? " using the AI model" : ""}. Check it, then save.`;
+});
+document.querySelectorAll(".dtabs button").forEach(b => b.addEventListener("click", () => {
+  if (b.dataset.doc === CUR || !DOCS) return;
+  CUR = b.dataset.doc; document.querySelectorAll(".dtabs button").forEach(x => x.classList.toggle("on", x === b)); renderFile();
+}));
+if (location.hash === "#docs") showView("docs");
+if (location.hash === "#settings") showView("settings");
+</script>
+</body>
+</html>

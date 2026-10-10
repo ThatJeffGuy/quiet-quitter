@@ -1,0 +1,36 @@
+# Portainer: Stacks -> Add stack -> Web editor name "job-monitor".
+# Fill the values in the "Environment variables" section below the editor (names listed under environment:).
+# Needs the image on this host (job-monitor:latest) and the data folder ./data (edit the path below).
+services:
+  job-monitor:
+    image: job-monitor:latest
+    container_name: the-quiet-quitter
+    restart: unless-stopped
+    ports:
+      - "31361:31361"
+    environment:
+      TZ: America/Toronto
+      PORT: "31361"
+      JM_USER: ${JM_USER:-}
+      JM_PASS: ${JM_PASS:-}               # the app refuses to start if no login is configured
+      JM_USERS: ${JM_USERS:-}              # optional extra logins: alice:pw1,bob:pw2
+      CROWDSEC_URL: ${CROWDSEC_URL:-}      # http://crowdsec:8080
+      CROWDSEC_KEY: ${CROWDSEC_KEY:-}
+      OLLAMA_URL: ${OLLAMA_URL:-}   # text-only model on a GPU host; leave empty to use plain parsing only
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-qwen2.5:7b-instruct}         # fast model: reading resumes, pulling facts out of postings
+      OLLAMA_WRITE_MODEL: ${OLLAMA_WRITE_MODEL:-qwen3:8b}         # stronger model: analysis, cover letters, summaries
+    volumes:
+      - ./data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=400m
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os,sys,urllib.request as u;sys.exit(0 if u.urlopen('http://127.0.0.1:'+os.environ['PORT']+'/healthz',timeout=5).status==200 else 1)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 180s

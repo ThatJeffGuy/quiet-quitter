@@ -1,0 +1,5 @@
+data
+site
+seen.db
+__pycache__
+.env

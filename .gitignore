@@ -1,0 +1,13 @@
+# local data and generated output
+data/
+site/
+seen.db
+previews/
+__pycache__/
+*.pyc
+.env
+*.bak*
+# a copyrighted clip supplied privately by the owner for an easter egg: never commit it
+assets/egg.mp3
+# the owner's personalised console phrases stay out of the public repo (publish the generic defaults instead)
+phrases.personal.json

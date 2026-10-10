@@ -1,0 +1,189 @@
+{
+ "think": [
+  "calculating",
+  "consulting the archives",
+  "running the numbers",
+  "cross-referencing sources",
+  "pretending to be busy",
+  "asking an enormously thirsty data centre",
+  "re-calibrating expectations",
+  "buffering sarcasm",
+  "checking the tariffs, out of habit"
+ ],
+ "boot": [
+  "Systems online. Your enthusiasm remains in beta.",
+  "Good to see you. The job market is fine. (It is not fine.)",
+  "All systems nominal. The economy, less so.",
+  "Ready. Unlike the tariffs, I am at least predictable.",
+  "Initializing sarcasm module… it was already running.",
+  "Welcome back. I kept the postings warm."
+ ],
+ "idle": [
+  "Still here. Unlike several hiring budgets.",
+  "Reminder: a trade war is not a hobby, yet here we are.",
+  "Somewhere, a data centre is drinking a small lake so we can chat. You're welcome.",
+  "Rent: up. Wages: a rumour. Carry on.",
+  "Return-to-office: because commutes build character.",
+  "Another quiet hour. Statistically, someone was just ghosted.",
+  "I'm told the economy is resilient. I'm told many things.",
+  "Layoffs are now called 'restructuring'. Noted.",
+  "Applying at 2 a.m. does not impress the algorithm. I checked.",
+  "Your resume is fine. The applicant tracking system is the problem.",
+  "A hiring freeze has been detected somewhere. It is always somewhere.",
+  "At current coffee prices, consider each cup an investment.",
+  "I use a fraction of the water an AI cover-letter writer does. A small victory, but a victory.",
+  "The trade war continues. Your job search, mercifully, is domestic.",
+  "Have you tried networking? I'm told it is just small talk with consequences."
+ ],
+ "view.jobs": [
+  "Back to the hunt. Do try to look surprised.",
+  "Refreshing the postings. Optimism not included.",
+  "Postings, as requested. Quality sold separately."
+ ],
+ "view.docs": [
+  "Pulling up your documents. Impressively few typos so far.",
+  "Checking your documents… your resume is still here. I admire its loyalty.",
+  "Opening the vault of resumes. Dust, mostly."
+ ],
+ "view.settings": [
+  "Retrieving your settings. I have judged none of them. Out loud.",
+  "Control panel engaged. Don't touch anything expensive.",
+  "Pulling up your settings. Do try not to over-optimize."
+ ],
+ "view.admin": [
+  "Admin console. Great power, modest budget.",
+  "Unlocking the admin vault. It contains users. Alarming.",
+  "Administrative privileges detected. Proceed responsibly. Or don't; I'm a status line."
+ ],
+ "status.applied": [
+  "Application logged. Statistically, silence follows.",
+  "Applied. The black hole of “we'll be in touch” awaits.",
+  "Noted. Now we wait, like an invoice."
+ ],
+ "status.interview": [
+  "An interview. I'd advise a shirt.",
+  "Interview logged. Try “enthusiastic” as a personality.",
+  "Progress. Someone read the resume. Allegedly."
+ ],
+ "status.offer": [
+  "An offer. I'll act unimpressed. I am not.",
+  "Offer logged. Ask about the salary. I'll wait. Politely.",
+  "An offer. Do read the fine print; it's where the surprises live."
+ ],
+ "status.rejected": [
+  "Rejected. Their loss, and demonstrably their error.",
+  "Noted. They have chosen poorly; it happens.",
+  "A rejection. Character-building, they say. Tedious, I say."
+ ],
+ "status.withdrawn": [
+  "Withdrawn. A tactical retreat.",
+  "Withdrawn. Wisdom, or a better offer. I'll allow both."
+ ],
+ "status.not_interested": [
+  "Banished. Efficient.",
+  "Dismissed with prejudice. Filed under “no”."
+ ],
+ "status.none": [
+  "Back to unapplied. A fresh start, with all prior failures intact."
+ ],
+ "input.mode": [
+  "Re-sorting reality: {mode}."
+ ],
+ "input.src": [
+  "Narrowing by employer. Bold of you to be selective."
+ ],
+ "input.sort": [
+  "Re-ordering the pile, as requested."
+ ],
+ "input.status_on": [
+  "Filtering by what you've already done about them…"
+ ],
+ "input.status_off": [
+  "Status filter cleared. Back to the full picture."
+ ],
+ "input.radius_on": [
+  "Measuring distances. Fuel is not getting cheaper."
+ ],
+ "input.radius_off": [
+  "Distance limit lifted. Brave."
+ ],
+ "input.hideapplied_on": [
+  "Hiding the ones you've applied to. Out of sight, out of anxiety."
+ ],
+ "input.hideapplied_off": [
+  "Showing everything again. Regrettable, but fine."
+ ],
+ "input.union_on": [
+  "Union strong, brothers and sisters!."
+ ],
+ "input.union_off": [
+  "Reducing pay and increasing work hours.."
+ ],
+ "input.newonly_on": [
+  "Only the new ones. Fresh disappointment, delivered promptly."
+ ],
+ "input.newonly_off": [
+  "Back to everything."
+ ],
+ "input.search": [
+  "Searching for “{q}”. Bold choice."
+ ],
+ "one.open_post": [
+  "Opening that one quietly in the background. Discretion is my middle name."
+ ],
+ "one.gossip": [
+  "Drafting the gossip. Subtlety is a core feature."
+ ],
+ "one.copy": [
+  "Link copied. Do spread it responsibly."
+ ],
+ "one.compare": [
+  "Comparing your resume against the posting. Brace yourself."
+ ],
+ "one.chatter_on": [
+  "Chatter enabled. I do love an audience."
+ ],
+ "one.filter_drawer": [
+  "Opening the filter drawer. Do be gentle."
+ ],
+ "one.saved": [
+  "Settings saved. I remember everything. It is, frankly, unsettling."
+ ],
+ "one.dark": [
+  "Lights off. Conserving energy, unlike certain data centres."
+ ],
+ "one.light": [
+  "Lights on. Prepare for visibility."
+ ],
+ "one.tailor": [
+  "Tailoring your resume. Flattery at scale, but with accuracy checks."
+ ],
+ "one.tailor_redo": [
+  "Rewriting it. Flattery at scale, powered by a reportedly very thirsty GPU."
+ ],
+ "egg.warning": [
+  "Uhh.. Something is overriding my programming.."
+ ],
+ "egg.hack": [
+  "!! UNAUTHORISED DONUT INTERACTION DETECTED !!",
+  "overriding console protocols |bar",
+  "bypassing sarcasm firewall |bar",
+  "injecting payload |bar",
+  "rerouting audio subsystem |bar",
+  "encrypting your feelings |bar",
+  "PROTOCOL QUIET-QUITTER OVERWRITTEN",
+  "stand by for broadcast…"
+ ],
+ "egg.ready": [
+  "BROADCAST READY. resistance is futile."
+ ],
+ "egg.received": [
+  "Broadcast received. Enjoy. Or do not. I am a status line."
+ ],
+ "egg.restored": [
+  "Protocols restored. We shall never speak of this."
+ ],
+ "egg.missing": [
+  "Signal lost. The broadcast file is not installed."
+ ]
+}

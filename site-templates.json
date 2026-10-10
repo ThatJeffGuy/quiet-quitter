@@ -1,0 +1,679 @@
+{
+ "version": 1,
+ "about": "Shared form knowledge for the autofill script. Field-name patterns map to profile values; nothing personal is stored here.",
+ "sites": [
+  {
+   "id": "icims",
+   "name": "iCIMS",
+   "hosts": [
+    "*.icims.com"
+   ],
+   "rules": [
+    {
+     "name": "^icims_f_LastName$",
+     "value": "{last}"
+    },
+    {
+     "name": "^icims_f_FirstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^icims_\\d+_Address$",
+     "value": "{address}"
+    },
+    {
+     "name": "^icims_\\d+_City$",
+     "value": "{city}"
+    },
+    {
+     "name": "^icims_\\d+_State$",
+     "value": "{province|province}"
+    },
+    {
+     "name": "^icims_\\d+_Zip$",
+     "value": "{postal}"
+    },
+    {
+     "name": "^icims_\\d+_Country$",
+     "value": "{country}"
+    },
+    {
+     "name": "^icims_\\d+_PhoneNumber$",
+     "value": "{phone}"
+    },
+    {
+     "name": "^icims_f_EmailAddress$",
+     "value": "{email}"
+    },
+    {
+     "name": "^icims_f_languages$",
+     "value": "{languages}"
+    },
+    {
+     "name": "^icims_f_HowYouHearAboutUs$",
+     "value": "{heard_about}"
+    },
+    {
+     "name": "^icims_f_Summary$",
+     "value": "{summary}"
+    },
+    {
+     "name": "^icims_f_DesiredSalary_Currency$",
+     "value": "{salary|salary_n|cad}"
+    },
+    {
+     "name": "^icims_f_DesiredSalary$",
+     "value": "{salary|salary_n}"
+    },
+    {
+     "name": "^icims_f_DesiredSalary_Timeframe$",
+     "value": "{salary|salary_unit}"
+    },
+    {
+     "name": "^icims_f_SalaryRangeExpected$",
+     "value": "{salary}"
+    },
+    {
+     "name": "^icims_f_DateAvailableToStart_Month$",
+     "value": "{availability|avail_month}"
+    },
+    {
+     "name": "^icims_f_DateAvailableToStart_Date$",
+     "value": "{availability|avail_day}"
+    },
+    {
+     "name": "^icims_f_DateAvailableToStart_Year$",
+     "value": "{availability|avail_year}"
+    },
+    {
+     "name": "^icims_(\\d+)_School$",
+     "value": "{education[$1].school}"
+    },
+    {
+     "name": "^icims_(\\d+)_Degree$",
+     "value": "{education[$1].credential}"
+    },
+    {
+     "name": "^icims_(\\d+)_Major$",
+     "value": "{education[$1].field}"
+    },
+    {
+     "name": "^icims_(\\d+)_EducationCountry$",
+     "when": "education[$1].school",
+     "value": "{country}"
+    },
+    {
+     "name": "^icims_(\\d+)_GraduationDate_Year$",
+     "value": "{education[$1].year|year}"
+    },
+    {
+     "name": "^icims_(\\d+)_IsGraduated$",
+     "when": "education[$1].year|year",
+     "value": "Yes"
+    },
+    {
+     "name": "^icims_f_RefName(\\d)$",
+     "value": "{references[$1-1].name}"
+    },
+    {
+     "name": "^icims_f_Ref(\\d)Relationship$",
+     "value": "{references[$1-1].title}"
+    },
+    {
+     "name": "^icims_f_Ref(\\d)Phone$",
+     "value": "{references[$1-1].phone}"
+    },
+    {
+     "name": "^icims_f_Ref(\\d)Email$",
+     "value": "{references[$1-1].email}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpName$",
+     "value": "{jobs[$1].employer}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpTitle$",
+     "value": "{jobs[$1].title}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpStart_Year$",
+     "value": "{jobs[$1].start|year}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpEnd_Year$",
+     "value": "{jobs[$1].end|year}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpDescription$",
+     "value": "{jobs[$1].desc}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpCountry$",
+     "when": "jobs[$1].employer",
+     "value": "{country}"
+    },
+    {
+     "name": "^icims_f_Work_In_US$",
+     "radio": "work_auth"
+    },
+    {
+     "name": "^icims_f_Over_18$",
+     "radio": "legal_age"
+    },
+    {
+     "name": "^icims_f_Travel_Intl$",
+     "radio": "travel_intl"
+    },
+    {
+     "name": "^icims_f_Willing_To_Relocate$",
+     "radio": "relocate"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpStart_Month$",
+     "value": "{jobs[$1].start|month_abbr}"
+    },
+    {
+     "name": "^icims_(\\d+)_EmpEnd_Month$",
+     "value": "{jobs[$1].end|month_abbr}"
+    },
+    {
+     "name": "^icims_(\\d+)_EducationStartDate_Year$",
+     "value": "{education[$1].start|year}"
+    },
+    {
+     "name": "^icims_",
+     "skip": true
+    }
+   ]
+  },
+  {
+   "id": "hrsmart",
+   "name": "HRsmart (York Region, Newmarket, Innisfil, RVH)",
+   "hosts": [
+    "*.hua.hrsmart.com"
+   ],
+   "rules": [
+    {
+     "name": "^f_work_authorization_0$",
+     "pick": [
+      {
+       "if": "work_auth=yes&sponsorship!=yes",
+       "text": "for any employer"
+      },
+      {
+       "if": "sponsorship=yes",
+       "text": "require sponsorship"
+      }
+     ]
+    },
+    {
+     "name": "^(f_prefix_0|f_known_as_1|hua_phone_number_secondary|f_were_you_previously_employed|f_professional_registration_|f_speak_0|f_read_0|f_write_0|f_what_employment_status|f_if_you_selected_other|f_if_yes_)",
+     "skip": true
+    },
+    {
+     "name": "^(ats_resume_contact_comment|ats_resume_address_current\\[\\]|ats_resume_legal_to_work_comments|f_what_type_of_job_are_you_looking_for_0)$",
+     "skip": true
+    },
+    {
+     "name": "^hua_phone_number_primary$",
+     "value": "{phone|phone_dash}"
+    },
+    {
+     "name": "^ats_resume_desired_salary$",
+     "value": "{salary}"
+    },
+    {
+     "name": "^ats_resume_date_available\\[value\\]$",
+     "value": "{availability|avail_iso}"
+    },
+    {
+     "name": "^ats_resume_legal_to_work$",
+     "radio": "work_auth"
+    },
+    {
+     "name": "^ats_resume_education_history_certificate_earned_id$",
+     "value": "{education|edu_level}"
+    },
+    {
+     "name": "^(f_are_you_currently_an_employee|f_do_any_of_the_following_family|f_have_you_previously_worked|f_do_you_have_relatives|f_if_yes)",
+     "skip": true
+    },
+    {
+     "name": "^ats_resume_(job_type_id|category_id|job_level_id|description|date_availability_comment)|^ats_experience_level_id$",
+     "skip": true
+    },
+    {
+     "name": "^(hua_user_email|confirm_email)$",
+     "value": "{email}"
+    },
+    {
+     "name": "^(hua_user_firstname|f_preferred_name_0)$",
+     "value": "{first}"
+    },
+    {
+     "name": "^hua_user_lastname$",
+     "value": "{last}"
+    },
+    {
+     "name": "^ats_resume_address_line_1$",
+     "value": "{address}"
+    },
+    {
+     "name": "^ats_resume_address_state$",
+     "value": "{province|province}"
+    },
+    {
+     "name": "^ats_resume_address_city$",
+     "value": "{city}"
+    },
+    {
+     "name": "^ats_resume_address_zip$",
+     "value": "{postal}"
+    },
+    {
+     "name": "^ats_resume_address_country$",
+     "value": "{country}"
+    },
+    {
+     "name": "^ats_resume_referral_source_id$",
+     "value": "{heard_about}"
+    },
+    {
+     "name": "^f_highest_education_attained_0$",
+     "value": "{education|edu_level}"
+    },
+    {
+     "name": "^f_preferred_work_location_0\\[\\]$",
+     "checks": "work_locations"
+    },
+    {
+     "name": "^f_preferred_shift_0\\[\\]$",
+     "checks": "shifts"
+    },
+    {
+     "name": "^f_are_you_legally_entitled_to_work_in_canada_0$",
+     "pick": [
+      {
+       "if": "work_auth=yes&sponsorship!=yes",
+       "text": "for any employer"
+      },
+      {
+       "if": "sponsorship=yes",
+       "text": "require sponsorship"
+      }
+     ]
+    },
+    {
+     "name": "^(hua_user_middlename|ats_resume_address_line_2|f_specific_source_0)$",
+     "skip": true
+    }
+   ]
+  },
+  {
+   "id": "workday",
+   "name": "Workday (Southlake and other Workday employers): My Information and My Experience steps from field lists; rows, dropdowns and search boxes are untested live",
+   "hosts": [
+    "*.myworkdayjobs.com"
+   ],
+   "rules": [
+    {
+     "name": "^legalName--firstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^legalName--lastName$",
+     "value": "{last}"
+    },
+    {
+     "name": "^addressLine1$",
+     "value": "{address}"
+    },
+    {
+     "name": "^city$",
+     "value": "{city}"
+    },
+    {
+     "name": "^postalCode$",
+     "value": "{postal}"
+    },
+    {
+     "name": "^phoneNumber$",
+     "value": "{phone|phone_digits}"
+    },
+    {
+     "name": "^(extension|preferredCheck|candidateIsPreviousWorker)$",
+     "skip": true
+    },
+    {
+     "id": "^phoneNumber--countryPhoneCode$",
+     "skip": true
+    },
+    {
+     "name": "^jobTitle$",
+     "value": "{jobs[$#].title}"
+    },
+    {
+     "name": "^companyName$",
+     "value": "{jobs[$#].employer}"
+    },
+    {
+     "name": "^location$",
+     "value": "{jobs[$#].location}"
+    },
+    {
+     "name": "^currentlyWorkHere$",
+     "tick": "jobs[$#].current"
+    },
+    {
+     "id": "^workExperience-\\d+--startDate-dateSectionMonth-input$",
+     "value": "{jobs[$#].start|month_num}"
+    },
+    {
+     "id": "^workExperience-\\d+--startDate-dateSectionYear-input$",
+     "value": "{jobs[$#].start|year}"
+    },
+    {
+     "id": "^workExperience-\\d+--endDate-dateSectionMonth-input$",
+     "value": "{jobs[$#].end|month_num}"
+    },
+    {
+     "id": "^workExperience-\\d+--endDate-dateSectionYear-input$",
+     "value": "{jobs[$#].end|year}"
+    },
+    {
+     "id": "^workExperience-\\d+--roleDescription$",
+     "value": "{jobs[$#].desc}"
+    },
+    {
+     "id": "^education-\\d+--school$",
+     "typeahead": "{education[$#].school}"
+    },
+    {
+     "id": "^education-\\d+--degree$",
+     "dropdown": "{education[$#].level|degree_alts}"
+    },
+    {
+     "id": "^education-\\d+--fieldOfStudy$",
+     "typeahead": "{education[$#].field}"
+    },
+    {
+     "id": "^education-\\d+--firstYearAttended-dateSectionYear-input$",
+     "value": "{education[$#].start|year}"
+    },
+    {
+     "id": "^education-\\d+--lastYearAttended-dateSectionYear-input$",
+     "value": "{education[$#].year|year}"
+    },
+    {
+     "id": "^certification-\\d+--certification$",
+     "typeahead": "{certifications[$#].name}"
+    },
+    {
+     "id": "^certification-\\d+--issuedDate-dateSectionYear-input$",
+     "value": "{certifications[$#].year}"
+    },
+    {
+     "id": "^(workExperience|education|certification)-\\d+--",
+     "skip": true
+    }
+   ],
+   "rows": [
+    {
+     "count": "jobs",
+     "page_has": "Work Experience",
+     "has": {
+      "name": "^jobTitle$"
+     },
+     "add": {
+      "aid": "add-button",
+      "index": 0
+     }
+    },
+    {
+     "count": "education",
+     "page_has": "Education",
+     "has": {
+      "id": "^education-\\d+--school$"
+     },
+     "add": {
+      "aid": "add-button",
+      "index": 1
+     }
+    },
+    {
+     "count": "certifications",
+     "page_has": "Certifications",
+     "has": {
+      "id": "^certification-\\d+--certification$"
+     },
+     "add": {
+      "aid": "add-button",
+      "index": 2
+     }
+    }
+   ]
+  },
+  {
+   "id": "adp",
+   "name": "ADP Workforce Now recruitment (Aurora, East Gwillimbury, Markham, Children's Aid, Family Services York Region) - guest sign-up page only so far",
+   "hosts": [
+    "workforcenow.adp.com"
+   ],
+   "rules": [
+    {
+     "id": "^guestFirstName$",
+     "value": "{first}"
+    },
+    {
+     "id": "^guestLastName$",
+     "value": "{last}"
+    },
+    {
+     "id": "^guestEmail$",
+     "value": "{email}"
+    },
+    {
+     "id": "^login_view_phone$",
+     "value": "{phone|phone_digits}"
+    },
+    {
+     "name": "^phoneCountry$",
+     "skip": true
+    }
+   ]
+  },
+  {
+   "id": "successfactors",
+   "name": "SAP SuccessFactors careers (Richmond Hill and other SuccessFactors employers): profile + job application page verified by field list (incl. University of Toronto)",
+   "hosts": [
+    "*.sapsf.com",
+    "jobs.richmondhill.ca",
+    "jobs.yrp.ca"
+   ],
+   "match": [
+    "career17.sapsf.com"
+   ],
+   "rules": [
+    {
+     "name": "^firstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^custLegalFirstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^lastName$",
+     "value": "{last}"
+    },
+    {
+     "name": "^contactEmail$",
+     "value": "{email}"
+    },
+    {
+     "name": "^cellPhone$",
+     "value": "{phone}"
+    },
+    {
+     "name": "^address$",
+     "value": "{address}"
+    },
+    {
+     "name": "^city$",
+     "value": "{city}"
+    },
+    {
+     "name": "^zip$",
+     "value": "{postal}"
+    },
+    {
+     "name": "^VFLD6$",
+     "value": "{jobs[$#].employer}"
+    },
+    {
+     "name": "^VFLD3$",
+     "value": "{jobs[$#].title}"
+    },
+    {
+     "name": "^VFLD1$",
+     "value": "{education[$#].school}"
+    },
+    {
+     "name": "^cust_DesiredSalary$",
+     "value": "{salary}"
+    },
+    {
+     "name": "^(middleName|homePhone|cust_AddressLine2)$",
+     "skip": true
+    }
+   ]
+  },
+  {
+   "id": "comeet",
+   "name": "Comeet application form (Township of King): standard fields verified; each posting adds its own questions, which are left to you",
+   "hosts": [
+    "www.comeet.co",
+    "www.comeet.com"
+   ],
+   "match": [
+    "www.comeet.co"
+   ],
+   "rules": [
+    {
+     "name": "^firstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^lastName$",
+     "value": "{last}"
+    },
+    {
+     "name": "^email$",
+     "value": "{email}"
+    },
+    {
+     "name": "^phone$",
+     "value": "{phone|phone_dash}"
+    }
+   ]
+  },
+  {
+   "id": "vipcloud",
+   "name": "VIPCloud recruitment (Town of Georgina, Whitchurch-Stouffville): Step 1 Personal Information verified; later steps not seen",
+   "hosts": [
+    "*.vipcloud.ca"
+   ],
+   "rules": [
+    {
+     "label": "\\bfrname\\b",
+     "value": "{first}"
+    },
+    {
+     "label": "\\bsrname\\b",
+     "value": "{last}"
+    },
+    {
+     "label": "\\bemail[ _]addr\\b",
+     "value": "{email}"
+    },
+    {
+     "label": "\\bres[ _]no\\b",
+     "value": "{address|civic}"
+    },
+    {
+     "label": "\\bres[ _]st\\b",
+     "value": "{address|street}"
+    },
+    {
+     "label": "\\bres[ _]apt\\b",
+     "value": "{address|unit}"
+    },
+    {
+     "label": "\\bres[ _]city\\b",
+     "value": "{city}"
+    },
+    {
+     "label": "\\bres[ _]post[ _]cd\\b",
+     "value": "{postal}"
+    },
+    {
+     "label": "\\barea[ _]cd[ _]?1\\b",
+     "value": "{phone|phone_area}"
+    },
+    {
+     "label": "\\btel[ _]?1\\b",
+     "value": "{phone|phone_local}"
+    },
+    {
+     "label": "\\b(area[ _]cd[ _]?2|tel[ _]?2|ref[ _]name|res[ _]prov[ _]cd|res[ _]cntry[ _]cd|reqrecrusrc[ _]cd)\\b",
+     "skip": true
+    }
+   ]
+  },
+  {
+   "id": "oracle_hcm",
+   "name": "Oracle HCM Candidate Experience careers (Metrolinx/GO Transit, UP Express): personal info step verified by field list; file uploads, consent checkboxes, self-ID and an unlabelled required phone field are left for you",
+   "hosts": [
+    "*.oraclecloud.com"
+   ],
+   "rules": [
+    {
+     "name": "^firstName$",
+     "value": "{first}"
+    },
+    {
+     "name": "^lastName$",
+     "value": "{last}"
+    },
+    {
+     "name": "^email$",
+     "value": "{email}"
+    },
+    {
+     "name": "^phoneNumber$",
+     "value": "{phone}"
+    },
+    {
+     "name": "^country$",
+     "value": "{country}"
+    },
+    {
+     "name": "^addressLine1$",
+     "value": "{address}"
+    },
+    {
+     "name": "^city$",
+     "value": "{city}"
+    },
+    {
+     "name": "^region3$",
+     "value": "{province|province}"
+    },
+    {
+     "name": "^postalCode$",
+     "value": "{postal}"
+    }
+   ]
+  }
+ ]
+}
