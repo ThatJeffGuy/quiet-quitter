@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Remembered employer details (name, mailing address) so a cover letter can be addressed without asking each time.
 
 Stored once per employer source in employers.json. The first time a posting is prepared the address is read from the

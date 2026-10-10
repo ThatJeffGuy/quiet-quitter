@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Export the console phrases to an editable text file, and import an edited one back.
 
   python3 tools/phrases.py export  ~/Downloads/quiet-quitter-phrases.txt

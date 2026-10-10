@@ -55,3 +55,9 @@ Copy an existing entry in `sources`, set its `type` (the adapter), the board's U
 ## Licence
 Copyright (c) 2026 That Scottish Guy. Licensed under the **GNU Affero General Public License v3.0** (see `LICENSE`).
 If you run a modified version as a network service, you must offer its source to the people using it.
+
+Every source file carries an [SPDX](https://spdx.dev) tag (`SPDX-License-Identifier: AGPL-3.0-only`), so tools can read the licence automatically.
+
+## Credits
+The donut artwork (`assets/`: logo mark, icons, share image) was generated with Google Gemini and is included under the same licence as the rest of the project.
+The optional easter-egg audio is not included.

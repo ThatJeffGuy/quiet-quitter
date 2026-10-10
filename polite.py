@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Be a considerate visitor to other people's websites.
 
 Installed once per scan, it wraps every outgoing HTTP request that the scanner makes and:

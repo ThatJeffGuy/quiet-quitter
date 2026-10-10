@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Signed one-click unsubscribe links for alert and digest emails.
 
 A link carries the person's username and an HMAC of it, made with the server's private session key, so only

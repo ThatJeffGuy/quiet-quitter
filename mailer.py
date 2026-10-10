@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Each person's own mailbox: they give an app password, and their alerts are sent from their account to themselves.
 
 - The app password is stored encrypted (Fernet) in mailcred-<user>.json. The key lives in mail.key beside it,

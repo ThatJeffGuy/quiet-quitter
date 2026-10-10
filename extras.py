@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Detail-page enrichment, source health tracking, and the weekly digest."""
 import html
 import json

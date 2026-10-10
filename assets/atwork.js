@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 That Scottish Guy
+// SPDX-License-Identifier: AGPL-3.0-only
 /* "I'm at work now": a boss key. Esc twice (or the briefcase button) covers the whole page with a believable
  * spreadsheet or a Windows XP desktop. Nothing here touches your data; it is all pretend. Press the same keys to come back. */
 (function () {

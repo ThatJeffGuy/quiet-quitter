@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """The look of the emails: a polished HTML version and a tidy plain-text version of each message."""
 import html as _html
 from datetime import date, datetime

@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 That Scottish Guy
+# SPDX-License-Identifier: AGPL-3.0-only
 """Uploaded resumes and cover letters: recognise the file type, pull the text out, and convert between formats.
 
 Type is decided from the file's own bytes, never from its name or the browser's claim.
