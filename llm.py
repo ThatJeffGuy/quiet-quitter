@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 """Optional local language model (Ollama) used to read a resume more cleverly than pattern matching can.
 
-Set OLLAMA_URL (for example http://192.168.1.40:11434) and optionally OLLAMA_MODEL. Nothing is sent anywhere else.
+Set OLLAMA_URL (for example http://ollama-host:11434) and optionally OLLAMA_MODEL. Nothing is sent anywhere else.
 The model only ever receives the plain text already read from the uploaded file (never the file, images or scans).
 Every function returns None when the model is unset or unreachable, and callers fall back to plain parsing.
 """
