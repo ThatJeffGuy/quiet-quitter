@@ -24,7 +24,7 @@ Data lives in the mounted `data/` folder (see `docker-compose.yml`); back it up.
   (stored encrypted; never sent back to the browser).
 - Keyword Finder (compare your resume with a posting), Tailor Resume (optional local LLM through Ollama; plain parsing otherwise).
 - Browser autofill userscript (Tampermonkey/Violentmonkey) served from `/autofill.user.js`.
-- Light/dark theme, an "at work" boss-key screen (press Esc twice), and a console line with phrases you can rewrite (`tools/phrases.py`).
+- Light/dark theme, an "at work" boss key (press Esc twice) with Excel, Windows 11 and Windows 10 desktops that run the real job board, plus full-screen fake update screens (Windows 11/10, macOS, Ubuntu), and a console line with phrases you can rewrite (`tools/phrases.py`).
 
 ## Being a good neighbour
 Scans are slow and polite (`polite.py`, `politeness` in `config.json`): at least 1.5 s between requests to a site, `robots.txt` respected,
@@ -51,6 +51,18 @@ The "donut easter egg" plays `assets/egg.mp3` if you supply one; it is not inclu
 ## Adding employers
 Copy an existing entry in `sources`, set its `type` (the adapter), the board's URL, and tag it with `place`, `label`, `group` and `sector`.
 `site-templates.json` describes how application forms on each platform are recognised by the autofill script.
+
+## Make it your own
+
+Use **Use this template** on GitHub (or fork), then:
+
+1. Set your own login in `portainer-stack.yml` / `docker-compose.yml` (`JM_USER`, `JM_PASS`; add more people from the Admin tab).
+2. Edit `config.json`: your region, the employers to watch, and the keywords that count as your field.
+3. Change the name and slogan in `server.py` (`SITE_TITLE`, `TAGLINE`), the header in `index.html` and the email header in `emailfmt.py`; replace the images in `assets/` and bump `OG_VERSION` so chat apps refresh the share image.
+4. Rewrite the console phrases with `tools/phrases.py`.
+5. Build and run (`docker compose up -d --build`), then put it behind your own HTTPS reverse proxy.
+
+Keep the AGPL source link in the footer if you run it as a service for other people.
 
 ## Licence
 Copyright (c) 2026 That Scottish Guy. Licensed under the **GNU Affero General Public License v3.0** (see `LICENSE`).

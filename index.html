@@ -222,7 +222,7 @@
   <div class="top">
     <h1><span class="mark" aria-hidden="true"></span>The Quiet Quitter</h1>
     <span class="slogan">Because a Timmy's giftcard doesn't pay the rent..</span>
-    <div class="who"><span class="km" id="me"></span><button type="button" class="iconbtn" id="workbtn" title="At work: covers this page with a spreadsheet. Press Esc twice to switch back." aria-label="At work">💼</button><button type="button" class="iconbtn" id="theme" title="Switch between light and dark" aria-label="Switch between light and dark">🌙</button><a href="#" id="logout" class="pill">Log out</a></div>
+    <div class="who"><span class="km" id="me"></span><button type="button" class="iconbtn" id="workbtn" title="At work: covers this page with a spreadsheet. Press Esc twice to switch back." aria-label="At work">💼</button><button type="button" class="iconbtn" id="updbtn" title="Fake Windows update screen, full screen. Press Esc twice to leave." aria-label="Fake update screen">🔄</button><button type="button" class="iconbtn" id="theme" title="Switch between light and dark" aria-label="Switch between light and dark">🌙</button><a href="#" id="logout" class="pill">Log out</a></div>
   </div>
   <div class="console" id="console" role="status" aria-live="polite"><span class="cprompt" aria-hidden="true">&rsaquo;</span><span id="ctext"></span><span class="ccursor typing" aria-hidden="true"></span></div>
   <nav class="tabs"><button data-view="jobs" class="on">Jobs</button><button data-view="docs">My documents</button><button data-view="settings">Settings</button><button data-view="admin" id="admintab" hidden>Admin</button></nav>
@@ -410,7 +410,7 @@
     <div><b>Made by <a href="https://www.everydaysciencestuff.com" target="_blank" rel="noopener">That Scottish Guy</a></b> · &copy; 2026 · <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a> · <a href="https://github.com/ThatJeffGuy/quiet-quitter" target="_blank" rel="noopener">Source on GitHub</a></div>
   </footer>
 </main>
-<script src="/atwork.js?v=3" defer></script>
+<script src="/atwork.js?v=8" defer></script>
 <script>
 const $ = id => document.getElementById(id);
 const STATUSES = ["applied", "interview", "offer", "rejected", "withdrawn"];            // the application pipeline
@@ -997,6 +997,7 @@ function paintTheme() {                // emoji only; the button shows what a cl
   b.textContent = dark ? "☀️" : "🌙"; b.title = b.ariaLabel = dark ? "Switch to light mode" : "Switch to dark mode";
 }
 $("workbtn").addEventListener("click", () => { if (window.QQWork) QQWork.toggle(); });
+$("updbtn").addEventListener("click", e => { if (window.QQWork) QQWork.updateMenu(e.currentTarget); });
 $("theme").addEventListener("click", () => { const t = effTheme() === "dark" ? "light" : "dark"; say(ph(t === "dark" ? "one.dark" : "one.light"), { think: false }); document.documentElement.dataset.theme = t; store.set("qq_theme", t); paintTheme(); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paintTheme);
 function setFilters(open) { $("fpanel").hidden = !open; $("ftoggle").setAttribute("aria-expanded", open); $("ftoggle").classList.toggle("on", open); store.set("qq_filters_open", open ? "1" : ""); }
