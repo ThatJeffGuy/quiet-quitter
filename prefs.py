@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Per-person settings (what they want to see, alert email) shared by the web server and the scanner.
 
 Stored as prefs-<user>.json in the data folder. The same rules are mirrored in the page's JavaScript

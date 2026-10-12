@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Local-government job monitor for Newmarket / York Region.
 
 Polls each source, remembers what it has seen in SQLite, and emails only

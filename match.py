@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Resume match: which of a posting's key terms already appear in a person's resume.
 
 Deliberately simple and explainable (no AI, nothing leaves the server): pick the terms that matter in the

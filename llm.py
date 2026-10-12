@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Optional local language model (Ollama) used to read a resume more cleverly than pattern matching can.
 
 Set OLLAMA_URL (for example http://ollama-host:11434) and optionally OLLAMA_MODEL. Nothing is sent anywhere else.

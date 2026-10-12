@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Make a tailored COPY of a Word resume with extra keywords the person confirmed they really have.
 
 The keywords go on one added line right under the resume's Skills section (or at the end if there isn't one),

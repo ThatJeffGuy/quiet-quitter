@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Container entrypoint: web server + scheduler in one process tree.
 
 Runs the monitor every 3 hours at :15 past the hour, and the weekly digest on

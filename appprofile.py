@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Application profile: the facts job-application forms ask for, kept per person.
 
 It starts as a best-effort reading of the uploaded resume's text (plain pattern matching, nothing leaves the server)

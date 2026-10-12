@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2026 That Scottish Guy
-// SPDX-License-Identifier: AGPL-3.0-only
-/* "I'm at work now": a boss key. Esc twice (or the briefcase button) covers the whole page with a believable
- * spreadsheet or a Windows 11 / 10 desktop. Nothing here touches your data; it is all pretend. Press the same keys to come back. */
+// SPDX-License-Identifier: MIT
+/* "I'm at work now": a boss key. The briefcase button (and nothing else) covers the whole page with a believable
+ * spreadsheet or a Windows 11 / 10 desktop. Nothing here touches your data; it is all pretend. Esc twice only ever leaves work mode (or a fake update screen); it never turns it on. */
 (function () {
   "use strict";
   var W = window, D = document;
@@ -302,8 +302,9 @@
   function excelSkin() {
     var root = h("div", { class: "xl" }), sheet = buildSheet(root, { skin: "excel" }), ribbonBody = h("div", { class: "xl-ribbon" });
     function group(name, btns) { return h("div", { class: "xl-group" }, [h("div", { class: "row" }, btns.map(function (b) { return rb(b); })), h("div", { class: "lab", text: name })]); }
-    function rb(b) { return h("button", { class: "xl-rb", text: b, onclick: function () { var uv = { "Auto Update": "auto", "Win 11": "w11", "Win 10": "w10", "macOS": "mac", "Ubuntu": "ubuntu" }[b]; if (uv) return showUpdate(uv); var sk = { "Windows 11 Mode": "w11", "Windows 10 Mode": "w10" }[b]; sheet.status(sk ? "Starting " + b + "..." : pick(["Done. (Nothing happened.)", "Working on it...", "Formatting applied to your hopes."])); if (sk) later(function () { setSkin(sk); }, 400); } }); }
+    function rb(b) { return h("button", { class: "xl-rb", text: b, onclick: function () { var uv = { "Auto Update": "auto", "Win 11": "w11", "Win 10": "w10", "macOS": "mac", "Ubuntu": "ubuntu" }[b]; if (uv) return showUpdate(uv); if (b === "Sign out" || b === "Close" || b === "Exit Excel") return exit(); var sk = { "Windows 11 Mode": "w11", "Windows 10 Mode": "w10" }[b]; sheet.status(sk ? "Starting " + b + "..." : pick(["Done. (Nothing happened.)", "Working on it...", "Formatting applied to your hopes."])); if (sk) later(function () { setSkin(sk); }, 400); } }); }
     var ribbons = {
+      File: [group("Account", ["Sign out", "Close"]), group("Exit", ["Exit Excel"])],
       Home: [group("Clipboard", ["Paste", "Cut", "Copy"]), group("Font", ["Calibri", "11", "B", "I", "U"]), group("Alignment", ["Left", "Center", "Right", "Wrap"]), group("Number", ["$", "%", ",", ".00"]), group("Editing", ["\u03A3 AutoSum", "Sort", "Find"])],
       Insert: [group("Tables", ["PivotTable", "Table"]), group("Charts", ["Column", "Line", "Pie (Pi)"]), group("Text", ["Text Box", "Header"])],
       "Page Layout": [group("Themes", ["Themes", "Colors"]), group("Page Setup", ["Margins", "Orientation", "Size"])],
@@ -555,8 +556,8 @@
     }
     icon("\uD83D\uDDA5", "This PC", apps.computer); icon("\uD83D\uDCC1", "Documents", apps.docs); icon("\uD83C\uDF10", "Microsoft Edge", apps.ie); icon("\uD83D\uDDD1", "Recycle Bin", apps.bin);
     icon("\uD83D\uDD04", "Windows 11 Update", function () { showUpdate("w11"); }); icon("\uD83D\uDD04", "Windows 10 Update", function () { showUpdate("w10"); }); icon("\uD83C\uDF4E", "macOS Update", function () { showUpdate("mac"); }); icon("\uD83D\uDC27", "Ubuntu Update", function () { showUpdate("ubuntu"); }); icon("\uD83D\uDCBC", "Job Board", apps.jobs); icon("\uD83D\uDCCB", "Application Tracker", apps.tracker); icon("\uD83D\uDCCA", "Back to Excel", function () { setSkin("excel"); }); icon("\uD83D\uDCCA", "Q3_Budget_Variance_FINAL_v7.xlsx", apps.excel); icon("\uD83D\uDCDD", "resignation_letter_DRAFT_v14.txt", apps.notepad);
-    function logOff() { dialog("Sign out", "Are you sure you want to sign out?<br><br>Your session will end and the real work will resume.", ["Sign out", "Cancel"], function (b) { if (b === 0) exit(); }); }
-    function turnOff() { var off = h("div", { class: "off", html: "Shutting down...<br><br>(Press Esc twice to go back to The Quiet Quitter.)" }); root.appendChild(off); off.addEventListener("click", function () { off.remove(); }); }
+    function logOff() { exit(); }
+    function turnOff() { var off = h("div", { class: "off", html: "Shutting down..." }); root.appendChild(off); later(exit, 1800); }
     function toggleStart() {
       if (startMenu) { startMenu.remove(); startMenu = null; return; }
       function mi(g, t, fn) { return h("div", { class: "xp-mi", onclick: function () { toggleStart(); fn(); } }, [h("span", { text: g, style: "font-size:18px" }), h("span", { text: t })]); }
@@ -688,7 +689,7 @@
 
   var lastEsc = 0;
   D.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !e.repeat) { var now = Date.now(); if (now - lastEsc < 450) { e.preventDefault(); if (U.el) closeUpdate(); else toggle(); lastEsc = 0; } else lastEsc = now; }
+    if (e.key === "Escape" && !e.repeat) { var now = Date.now(); if (now - lastEsc < 450) { e.preventDefault(); if (U.el) closeUpdate(); else if (S.on) exit(); lastEsc = 0; } else lastEsc = now; }
   }, true);
   W.QQWork = { update: showUpdate, updateMenu: updateMenu, toggle: toggle, enter: enter, exit: exit, skin: setSkin, on: function () { return S.on; } };
 })();

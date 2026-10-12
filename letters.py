@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 That Scottish Guy
-# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-License-Identifier: MIT
 """Cover letter and resume customisation for one posting, written by the local text model from the resume's plain text.
 
 The model writes only the body paragraphs and a short resume summary. Everything else (sender and employer blocks, date,
