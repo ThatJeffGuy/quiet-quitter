@@ -18,7 +18,7 @@ Set `public_url` in `config.json` to your site's address (used for links in emai
 Data lives in the mounted `data/` folder (see `docker-compose.yml`); back it up.
 
 ## Features
-- Adapters for common job-board software: HRsmart, Workday, ADP, SuccessFactors, iCIMS, Taleo, Oracle HCM, TalentLink, Comeet, RSS feeds.
+- Adapters for common job-board software: HRsmart, Workday, ADP, SuccessFactors, iCIMS, Taleo, Oracle HCM, TalentLink, Comeet, Dayforce, RSS feeds.
 - Categories with title/keyword rules (`prefs.py`), distance filter from a postal-code prefix, union/pay/closing-date extraction, status tracking.
 - Per-person logins (email addresses), their own tracker, documents, and email alerts sent from their own mailbox using an app password
   (stored encrypted; never sent back to the browser).

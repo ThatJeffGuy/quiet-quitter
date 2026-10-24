@@ -283,8 +283,41 @@ def taleo_tee(host, section, portal):
     return list(out.values())
 
 
+def dayforce(tenant, site, culture="en-US"):
+    """Dayforce candidate-portal JSON API (employer career sites hosted on jobs.dayforcehcm.com). Method borrowed from freehire (MIT, strelov1/freehire internal/ingest/sources/dayforce.go):
+    GET /api/auth/csrf sets a cookie and returns a token, which is echoed in X-CSRF-TOKEN on the listing POST. 25 postings per page."""
+    s = requests.Session()
+    s.headers.update(UA)
+    base = "https://jobs.dayforcehcm.com"
+    tok = s.get(base + "/api/auth/csrf", timeout=TIMEOUT)
+    tok.raise_for_status()
+    token = tok.json()["csrfToken"]
+    out, start = {}, 0
+    while start < 1000:
+        r = s.post(f"{base}/api/geo/{tenant}/jobposting/search", headers={"X-CSRF-TOKEN": token, "Accept": "application/json"}, timeout=TIMEOUT,
+                   json={"clientNamespace": tenant, "jobBoardCode": site, "cultureCode": culture, "paginationStart": start})
+        r.raise_for_status()
+        d = r.json()
+        items = d.get("jobPostings") or []
+        if not items:
+            break
+        for it in items:
+            jid = str(it["jobPostingId"])
+            places = []
+            for a in it.get("postingLocations") or []:
+                p = ", ".join(x for x in (a.get("cityName"), a.get("stateCode")) if x)
+                if p and p not in places:
+                    places.append(p)
+            out[jid] = {"id": jid, "title": clean(it.get("jobTitle", "")), "location": clean("; ".join(places)),
+                        "url": f"{base}/{culture}/{tenant}/{site}/jobs/{jid}"}
+        start += 25
+        if len(out) >= d.get("maxCount", 0):
+            break
+    return list(out.values())
+
+
 ADAPTERS = {"hrsmart": hrsmart, "workday": workday, "adp": adp, "rss": rss,
-            "successfactors": successfactors, "comeet": comeet, "icims": icims, "taleo": taleo_tbe, "oracle_hcm": oracle_hcm, "taleo_tee": taleo_tee, "sf_category": sf_category, "talentlink": talentlink}
+            "successfactors": successfactors, "comeet": comeet, "icims": icims, "taleo": taleo_tbe, "oracle_hcm": oracle_hcm, "taleo_tee": taleo_tee, "sf_category": sf_category, "talentlink": talentlink, "dayforce": dayforce}
 
 
 # ---------------------------------------------------------------- filters
